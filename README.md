@@ -12,3 +12,5 @@ Isidro Javier García Fernández
 Julia Pérez Barreales 
 
 Álvaro Sánchez Hernández
+
+Juan Manuel García Delgado
