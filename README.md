@@ -13,3 +13,5 @@
 - Julia Pérez Barreales 
 
 - Álvaro Sánchez Hernández
+
+- Juan Manuel García Delgado
