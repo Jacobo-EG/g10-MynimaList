@@ -1,4 +1,7 @@
 # g10-PlaceHolder
+
+David Ramírez Palacios
+
 Jesús Escudero Moreno
 
 José Antonio Luque Salguero
@@ -12,3 +15,4 @@ Isidro Javier García Fernández
 Julia Pérez Barreales 
 
 Álvaro Sánchez Hernández
+
