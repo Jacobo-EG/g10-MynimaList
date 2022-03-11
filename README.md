@@ -1,5 +1,7 @@
 # MynimaList
 
+![Logo](Logotipo/Logotipo.png)
+
 ## Integrantes:
 
 - Jesús Escudero Moreno
