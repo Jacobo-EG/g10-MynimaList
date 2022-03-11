@@ -1,4 +1,6 @@
-# PlaceHolder
+# MynimaList
+
+## Integrantes:
 
 - Jesús Escudero Moreno
 
