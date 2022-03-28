@@ -47,7 +47,7 @@ hecho lo mismo con el contenido del form */
 
 /* Botón inicio de sesión */
 
-.sign-in {
+.sign {
     border: none;
     background-color: darkgray;
     font-size: 15px;
@@ -56,6 +56,12 @@ hecho lo mismo con el contenido del form */
     margin-bottom: 10px;
     width: 100%;
     color: gray;
+}
+
+.sign:hover {
+    background-color: gray;
+    color: black;
+    cursor: pointer;
 }
 
 /* Imagen */
