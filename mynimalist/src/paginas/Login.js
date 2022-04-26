@@ -9,11 +9,11 @@ function Login() {
   const [password, setPassword] = useState('');
 
   let navigate = useNavigate();
-  const handleClickSignUp = ( ) => {
+  const handleClickSignUp = () => {
     navigate('/registro');
   };
 
-  const handleClickSignIn = ( ) => {
+  const handleClickSignIn = () => {
     let body = { "user": username, "password": password }
     console.log(body);
   };
@@ -26,7 +26,10 @@ function Login() {
           <input
             type="text"
             value={username}
-            onChange = { ({ target }) => setUsername(target.value) }
+            onChange = { (e) => {
+              setUsername(e.target.value);
+              console.log(username);
+            }}
           />
           <label>Usuario</label>
         </div>
@@ -34,14 +37,25 @@ function Login() {
           <input
             type="password"
             value={password}
-            onChange = { ({ target }) => setPassword(target.value) }
+            onChange = { (e) => {
+              setPassword(e.target.value);
+              console.log(password);
+            }}
           />
           <label>Contraseña</label>
         </div>
-        <button className='sign-in' onClick={handleClickSignIn}>
+        <button
+          type="button"
+          className="sign-in"
+          onClick={handleClickSignIn}
+        >
           Iniciar sesion
         </button>
-        <button className='sign-up' onClick={handleClickSignUp}>
+        <button
+          type="button"
+          className="sign-up"
+          onClick={handleClickSignUp}
+        >
           Registrarse
         </button>
       </form>
