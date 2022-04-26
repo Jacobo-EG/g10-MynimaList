@@ -61,6 +61,12 @@ html,  body {
   transition: .5s;
   margin-top: 10px;
   letter-spacing: 4px;
+  background: none!important;
+  border: none;
+}
+
+.sign-in:hover {
+  color: black;
 }
 
 .sign-up {
@@ -75,4 +81,10 @@ html,  body {
     transition: .5s;
     margin-top: 10px;
     letter-spacing: 4px;
+    background: none!important;
+    border: none;
+}
+
+.sign-up:hover {
+  color: black;
 }
