@@ -1,0 +1,10 @@
+.buttons {
+    display: flex;
+    align-items: center;
+}
+.edit {
+    right: 28px;
+}
+.delete {
+    right: 0;
+}

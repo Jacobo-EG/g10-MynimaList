@@ -1,0 +1,20 @@
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid #ebebeb;
+}
+
+.Header p {
+  font-size: 1.1rem;
+  font-size: 30px;
+  padding-right: 15px;
+  font-weight: bold;
+}
+
+.Header a {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+}

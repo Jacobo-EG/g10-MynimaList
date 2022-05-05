@@ -1,0 +1,29 @@
+.List {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    margin: 5px;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+.name {
+    cursor: pointer;
+    flex: 1;
+    word-break: break-all;
+}
+.List span {
+    position: absolute;
+    border-radius: 20%;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.List span:hover {
+    background-color: #adb5bd;
+    transition: all 150ms ease-in-out;
+  }

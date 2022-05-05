@@ -1,5 +1,5 @@
 import React from "react";
-import "../hojas-de-estilo/LogoWriting.css";
+import "../styles/LogoWriting.css";
 
 function LogoWriting() {
   return (

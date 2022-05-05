@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import '../hojas-de-estilo/Login.css';
-import LogoWriting from "../componentes/LogoWriting";
+import '../styles/Login.css';
+import LogoWriting from "../components/LogoWriting";
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -16,6 +16,7 @@ function Login() {
   const handleClickSignIn = () => {
     let body = { "user": username, "password": password }
     console.log(body);
+    navigate('/main')
   };
 
   return (

@@ -29,6 +29,7 @@ html,  body {
   border-bottom: 1px solid #fff;
   outline: none;
   background: transparent;
+  color: black;
 }
 .login-container .user-container label {
   position: absolute;
@@ -63,6 +64,7 @@ html,  body {
   letter-spacing: 4px;
   background: none!important;
   border: none;
+  cursor: pointer;
 }
 
 .sign-in:hover {
@@ -83,6 +85,7 @@ html,  body {
     letter-spacing: 4px;
     background: none!important;
     border: none;
+    cursor: pointer;
 }
 
 .sign-up:hover {
