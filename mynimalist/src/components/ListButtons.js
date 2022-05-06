@@ -6,7 +6,7 @@ function ListButtons() {
     return (
         <div className="buttons" >
             <span className="edit">
-            <Pencil size="18" />
+                <Pencil size="18" />
             </span> 
             <span className="delete">
                 <Trash />
