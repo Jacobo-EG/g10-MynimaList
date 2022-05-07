@@ -1,6 +1,7 @@
 import React, { useState }from "react";
 import "../styles/List.css";
-import ListButtons from "./ListButtons";
+import RenameList from "./RenameList";
+import DeleteList from "./DeleteList"
 
 function List({ list }) {
 
@@ -12,8 +13,10 @@ function List({ list }) {
       <div className="name">{list.name}</div>
       <div className="buttons">
         {
-          hover &&
-          <ListButtons />
+          hover 
+          && <div>
+            <DeleteList/> <RenameList/>
+          </div>
         }
       </div>
     </div>
