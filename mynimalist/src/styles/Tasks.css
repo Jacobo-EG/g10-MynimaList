@@ -13,7 +13,7 @@
   
     padding: 0 0.Srem 0.Srem 0.Srem;
   }
-  .Tasks.selected-project {
+  .Tasks .selected-list {
     margin: 1rem 0;
     text-transform: capitalize;
     font-size: 1.2rem;
@@ -21,6 +21,6 @@
     padding-bottom: 2px;
     border-bottom: 1px solid #eeeeee;
   }
-  .Tasks.tasks {
+  .Tasks .tasks {
     overflow-y: auto;
   }
