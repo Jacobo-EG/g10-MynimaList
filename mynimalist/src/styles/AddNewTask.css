@@ -1,0 +1,26 @@
+.AddNewTask {
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.AddNewTask .btn {
+    padding: 1rem;
+    width: 100%;
+    height: 70px;
+}
+
+.AddNewTask .btn button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    background-color: #595959;
+    color: #F2F2F2;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.AddNewTask .btn button:hover {
+    filter: brightness(1.1);
+    transition: all 300ms ease;
+}

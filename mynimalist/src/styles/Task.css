@@ -1,0 +1,41 @@
+.Task {
+    padding: 0.5rem 1rem;
+}
+
+.Task .task-container {
+    display: flex;
+    align-items: center;
+}
+
+.Task .task-container span {
+    cursor: pointer;
+}
+
+.Task .task-container .text {
+    position: relative;
+    flex: 1;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.Task .task-container .text span {
+    font-size: 0.8rem;
+    color: #CCCCCC;
+}
+
+.Task .task-container .text .line {
+    height: 1px;
+    background: #CCCCCC;
+    position: absolute;
+    top: 25%;
+    width: 0;
+    transition: width 250ms ease-in-out;
+}
+
+.Task .task-container .text .line-through {
+    width: 100%;
+}
+
+.Task .task-container .re-add {
+    margin-right: 10px;
+}
