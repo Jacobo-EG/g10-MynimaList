@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Task(){
+function Task({task}){
 
     return (
-        <div>
-            Task
+        <div className = 'Todo'>
+            {task.text}
         </div>
     )
 }
