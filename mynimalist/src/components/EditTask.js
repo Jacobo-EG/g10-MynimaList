@@ -1,28 +1,43 @@
 import React, {useState} from 'react'
 import "../styles/EditTask.css";
-import ListForm from './ListForm'
+import "../styles/TaskForm.css";
+import TaskForm from './TaskForm'
 function EditTask({children}){
-    const [text, setText] = useState()
-    const lists = [
-        { id : 1, name : "personal", numofTasks : 0},
-        { id : 2, name : "work", numofTasks : 1},
-        { id : 3, name : "other", numofTasks : 2}
-    ]
+    // const [text, setText] = useState()
+    // const lists = [
+    //     { id: 1, name: "metodos" },
+    //     { id: 2, name: "compleja" },
+    //     { id: 3, name: "curvas" }
+    //   ]
+        //CONTEXT
+        const { selectedList } = useContext(TaskContext);  
+        //STATE
+      const [text, setText] = useState();
+      const {taskList, setTaskList} = useState(selectedList);
     function handleSubmit(e){
 
     }
     return (
         <div className='EditTask'>
             <div className = "header">
-                Edit task
+                Edit Task
             </div>
             <div className = "container">
-                <TaskForm 
+            <TaskForm 
+                handleSubmit={handleSubmit}
+                text={text}
+                setText={setText}
+                taskList={taskList}
+                setTaskList={setTaskList}
+            />
+               
+                {/* <TaskForm 
                     handleSubmit = {handleSubmit}
                     text = {text}
                     setText = {setText}
                     lists = {lists}
-                    />
+                    />  */}
+                
             </div>
         </div>
     )
