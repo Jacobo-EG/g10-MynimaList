@@ -6,7 +6,8 @@ function TaskForm({
     handleSubmit,
     heading = false,
     text, setText,
-    showButtons = false,
+    confirmText,
+    deleteButton = false,
     setShowModal = false
 }) {
 
@@ -22,12 +23,12 @@ function TaskForm({
                     <h3>{heading}</h3>
                 }
                 <input
-                type="text"
                 value={text}
+                type="text"
                 onChange={e => setText(e.target.value)}
                 autoFocus/>
-                <button className='confirm'>
-                    Añadir
+                <button className={`confirm ${deleteButton ? "deleteButton" : ""}`}>
+                    {confirmText}
                 </button>
         </div>
         {/* <div className="pick-project">
