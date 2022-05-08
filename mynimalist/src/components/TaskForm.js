@@ -1,6 +1,5 @@
 import React from "react";
-import "../styles/AddNewTask.css";
-import TaskForm from "./TaskForm";
+import "../styles/TaskForm.css";
 import { TaskContext } from "../context";
 import { Palette } from "react-bootstrap-icons";
 
@@ -34,21 +33,6 @@ function TaskForm({
                 <button className='confirm'>
                     {confirmText}
                 </button>
-        </div>
-        <div className="pick-project">
-            <div className="title">
-                <Palette />
-                <p>Elige una lista</p>
-            </div>
-            <div className="lists">
-                {
-                    lists.map( list =>
-                        <div className="list" key={list.id}>
-                            {list.name}
-                        </div>
-                    )
-                }
-            </div>
         </div>
     </form>
   );
