@@ -7,7 +7,7 @@ function TaskForm({
     heading = false,
     text, setText,
     confirmText,
-    deleteButton = false,
+    showButton = false,
     setShowModal = false
 }) {
 
@@ -27,7 +27,7 @@ function TaskForm({
                 type="text"
                 onChange={e => setText(e.target.value)}
                 autoFocus/>
-                <button className={`confirm ${deleteButton ? "deleteButton" : ""}`}>
+                <button className="confirm">
                     {confirmText}
                 </button>
         </div>

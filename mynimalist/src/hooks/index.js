@@ -17,6 +17,20 @@ export function useTasks() {
             checked : true,
             color : '00ff00',
             list : 'complejaContext'
+        },
+        {
+            id : 'id3',
+            text : "TareaContext3",
+            checked : false,
+            color : '00ff00',
+            list : 'complejaContext'
+        },
+        {
+            id : 'id4',
+            text : "TareaContext4",
+            checked : false,
+            color : '00ff00',
+            list : 'complejaContext'
         }
     ]
 

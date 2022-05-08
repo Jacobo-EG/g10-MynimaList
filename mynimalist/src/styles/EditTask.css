@@ -1,22 +1,13 @@
-.EditTodo{
+.EditTask{
     position: absolute;
     bottom: 40px;
     left: calc(40px + 45px + 40px);
 
-    background-color: white;
+    background-color: gray;
 
     height: 80%;
     width: 450px;
 
     border-radius: 4px;
     opacity: 0.9;
-}
-.EditTodo .header {
-    margin: 1rem 0.5rem;
-
-    font-size: 1.2rem;
-    font-weight: bold;
-    
-    padding-bottom: 2px;
-    border-bottom: 1px solid #eeeeee
 }

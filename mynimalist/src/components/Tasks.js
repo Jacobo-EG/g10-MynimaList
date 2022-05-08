@@ -6,8 +6,6 @@ import AddNewTask from './AddNewTask';
 
 function Tasks(){
 
-    /* Fin del codigo para pruebas */
-
     const { tasks, selectedList } = useContext(TaskContext)
     
     return (

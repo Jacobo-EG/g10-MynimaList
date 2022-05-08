@@ -1,0 +1,29 @@
+.EditTaskForm {
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    width: 100%;
+}
+.EditTaskForm .edit-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+}
+.EditTaskForm .edit-container input {
+  background-color: #f8f9fa;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-right: 20px;
+  font-size: 1rem;
+}
+.EditTaskForm .edit-container input:focus {
+  outline: none;
+}
+.EditTaskForm .edit-container span {
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+}
+
