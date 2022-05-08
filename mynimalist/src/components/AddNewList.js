@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Modal from "./Modal";
 import ListForm from "./ListForm";
 import { PlusSquare } from "react-bootstrap-icons";
+import { TaskContext } from "../context";
 
 function AddNewList() {
   const [showModal, setShowModal] = useState(false);
+  const [listName, setListName] = useState('')
 
   function handleSubmit (e) {
-
+    e.preventDefault()
   }
 
   return (
@@ -17,7 +19,12 @@ function AddNewList() {
           <PlusSquare size="18" />
         </span>
         <Modal showModal={showModal} setShowModal={setShowModal}>
-          <ListForm handleSubmit={handleSubmit} heading='Añadir nueva lista' confirmText='Confirmar'/>
+          <ListForm 
+            handleSubmit={handleSubmit} 
+            heading='Añadir nueva lista' 
+            value = {listName}
+            setValue = {setListName}
+            confirmText='Confirmar'/>
         </Modal>
       </div>
     </div>

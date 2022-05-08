@@ -7,38 +7,39 @@ import { TaskContext } from "../context";
 function AddNewTask() {
     //CONTEXT
   const { selectedList } = useContext(TaskContext);  
+    
     //STATE
   const [showModal, setShowModal] = useState(false);
   const [text, setText] = useState("");
-  const {taskList, setTaskList} = useState(selectedList);
 
   function handleSubmit(e) {
 
   }
 
-  useEffect( () => {
-    setTaskList(selectedList)
-  }, [selectedList])
+
 
   return (
     <div className="AddNewTask">
         <div className="btn">
+          {
+            (selectedList !== undefined) &&
             <button onClick={() => setShowModal(true)}>
-                + New Task
+                Añadir tarea
             </button>
+          }
         </div>
-        <Modal showModal={showModal} setShowModal={setShowModal}>
-            <TaskForm 
-                handleSubmit={handleSubmit}
-                heading="Add a new task!"
-                text={text}
-                setText={setText}
-                taskList={taskList}
-                setTaskList={setTaskList}
-                showButtons={true}
-                setShowModal={setShowModal}
-            />
-        </Modal>
+        {
+          <Modal showModal={showModal} setShowModal={setShowModal}>
+              <TaskForm 
+                  handleSubmit={handleSubmit}
+                  heading="Añadir nueva tarea"
+                  text={text}
+                  setText={setText}
+                  showButtons={true}
+                  setShowModal={setShowModal}
+              />
+          </Modal>
+        }
     </div>
   );
 }

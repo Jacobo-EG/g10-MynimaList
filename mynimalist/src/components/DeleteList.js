@@ -4,7 +4,9 @@ import ListForm from "./ListForm";
 
 function DeleteList({ list }) {
 
-  function handleSubmit(e) {}
+  function handleSubmit(e) {
+    
+  }
 
   return (
     <div className="delete">

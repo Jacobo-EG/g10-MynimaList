@@ -1,14 +1,11 @@
 import React from "react";
-import "../styles/AddNewTask.css";
-import TaskForm from "./TaskForm";
+import "../styles/TaskForm.css";
 import { TaskContext } from "../context";
-import { Palette } from "react-bootstrap-icons";
 
 function TaskForm({
     handleSubmit,
     heading = false,
     text, setText,
-    lists,
     showButtons = false,
     setShowModal = false
 }) {
@@ -16,10 +13,6 @@ function TaskForm({
   function handleSubmit(e) {
 
   }
-
-  useEffect( () => {
-    setTaskList(selectedList)
-  }, [selectedList])
 
   return (
     <form className='TaskForm' onSubmit={handleSubmit}>
@@ -30,12 +23,14 @@ function TaskForm({
                 }
                 <input
                 type="text"
+                value={text}
+                onChange={e => setText(e.target.value)}
                 autoFocus/>
                 <button className='confirm'>
-                    {confirmText}
+                    Añadir
                 </button>
         </div>
-        <div className="pick-project">
+        {/* <div className="pick-project">
             <div className="title">
                 <Palette />
                 <p>Elige una lista</p>
@@ -49,7 +44,7 @@ function TaskForm({
                     )
                 }
             </div>
-        </div>
+        </div> */}
     </form>
   );
 }

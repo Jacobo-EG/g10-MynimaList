@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/Lists.css";
 import AddNewList from "./AddNewList";
+import { TaskContext } from '../context';
 import List from "./List";
 
 function Lists() {
-
-  const lists = [
-    { id: 1, name: "metodos" },
-    { id: 2, name: "compleja" },
-    { id: 3, name: "curvas" }
-  ]
+  
+  const { lists } = useContext(TaskContext)
 
   return (
     <div className="Lists">

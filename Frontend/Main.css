@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container general */
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: fixed;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent; 
+}
+
+/* Menu lateral */
+
+.menu {
+    display: flex;
+    height: 100%;
+    width: 30%;
+    margin: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: gray; 
+}
+
+/* Container opciones*/
+
+.options-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    background-color: transparent; 
+}
+
+.options {
+    background-color: transparent;
+    height: 4%;
+    width: 100%;
+}
+
+/* Botones de opcion */
+
+.option {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+}
+
+.option:hover {
+    cursor: pointer;
+}
+
+.list {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: darkgray; 
+}

@@ -6,6 +6,7 @@ function Task({task}) {
     
     //STATE
     const [hover, setHover] = useState(false)
+
     //CONTEXT
     // const {selectedTask, setSelectedTask} = useContext(TaskContext) 
     // const handleDelete = todo => {
@@ -15,6 +16,7 @@ function Task({task}) {
     //         setSelectedTask(undefined)
     //     }
     // }
+    
     return (
         <div className="Task">
             <div 
@@ -39,14 +41,7 @@ function Task({task}) {
                     <p style={{color : task.checked ? "#CCCCCC" : "#000000"}}>{task.text}</p>
                     <div className={`line ${task.checked ? "line-through" : ""}`}></div>
                 </div>
-                <div className="re-add">
-                    {
-                        task.checked && 
-                        <span>
-                            <ArrowClockwise />
-                        </span>
-                    }
-                </div>
+
                 <div className="delete-task">
                     {/* onClick = {() => handleDelete(task)} */}
                     {
