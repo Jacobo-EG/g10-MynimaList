@@ -32,11 +32,11 @@ function AddNewTask() {
                 handleSubmit={handleSubmit}
                 heading="Add a new task!"
                 text={text}
-                setText={setText}
-                taskList={taskList}
-                setTaskList={setTaskList}
-                showButtons={true}
-                setShowModal={setShowModal}
+                // setText={setText}
+                // taskList={taskList}
+                // setTaskList={setTaskList}
+                // showButtons={true}
+                // setShowModal={setShowModal}
             />
         </Modal>
     </div>

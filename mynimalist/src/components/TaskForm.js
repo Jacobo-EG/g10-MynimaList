@@ -6,19 +6,8 @@ import { Palette } from "react-bootstrap-icons";
 function TaskForm({
     handleSubmit,
     heading = false,
-    text, setText,
-    lists,
-    showButtons = false,
-    setShowModal = false
+    text,
 }) {
-
-  function handleSubmit(e) {
-
-  }
-
-  useEffect( () => {
-    setTaskList(selectedList)
-  }, [selectedList])
 
   return (
     <form className='TaskForm' onSubmit={handleSubmit}>
@@ -31,7 +20,7 @@ function TaskForm({
                 type="text"
                 autoFocus/>
                 <button className='confirm'>
-                    {confirmText}
+                    {text}
                 </button>
         </div>
     </form>
