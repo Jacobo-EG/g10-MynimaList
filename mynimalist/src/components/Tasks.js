@@ -1,32 +1,24 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Task from './Task'
 import '../styles/Tasks.css';
+import { TaskContext } from '../context';
+import AddNewTask from './AddNewTask';
 
 function Tasks(){
 
-    const selectedList = "ListaInventada"
-    const tasks = [
-        {
-            id : 'id1',
-            text : "Tarea1",
-            checked : false,
-            color : '000000',
-            list : 'personal'
-        }, 
-        {
-            id : 'id2',
-            text : "Tarea2",
-            checked : true,
-            color : '00ff00',
-            list : 'work'
-        }
-    ]
+    /* Fin del codigo para pruebas */
+
+    const { tasks, selectedList } = useContext(TaskContext)
     
     return (
         
         <div className = 'Tasks'>
             <div className = 'selected-list'>
-                {selectedList}
+                { (selectedList === undefined) ?
+                    "Inicio"
+                    : 
+                    selectedList
+                }
             </div>
             <div className = 'tasks'>
             {
@@ -34,6 +26,9 @@ function Tasks(){
                     <Task task = {task} key = {task.id} />
                     )
             }
+            </div>
+            <div>
+               <AddNewTask />
             </div>
         </div>
     )

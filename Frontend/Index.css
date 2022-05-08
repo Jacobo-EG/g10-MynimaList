@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tenemos un container que contiene la imagen del logo tipo
+y además un form con los recuadros, el botón y el enlace a la página de registro.
+Hemos puesto los elementos del container centrados y en columna, y luego hemos 
+hecho lo mismo con el contenido del form */
+
+/* Container */
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke; 
+}
+
+/* Form */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: whitesmoke;
+    width: 30%;
+}
+
+/* Recuadros inicio de sesión */
+
+.box {
+    border: none;
+    background-color: #C9C9C9;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Botón inicio de sesión */
+
+.sign {
+    border: none;
+    background-color: darkgray;
+    font-size: 15px;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: gray;
+}
+
+.sign:hover {
+    background-color: gray;
+    color: black;
+    cursor: pointer;
+}
+
+/* Imagen */
+
+.login-logo {
+    max-width: 50%;
+    max-height: 50%;
+    margin-bottom: 8%;
+}
+
+/* Registro */
+
+.sign-up{
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.sign-up:hover {
+    color: black;
+} 

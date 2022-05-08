@@ -35,3 +35,7 @@
 .confirm:hover {
   filter: brightness(1.1);
 }
+.ListForm 
+.deleteButton {
+  background-color: red;
+}
