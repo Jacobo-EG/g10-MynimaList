@@ -6,6 +6,7 @@ const TaskContext = createContext()
 function TaskContextProvider({ children }) {
 
     const [selectedList, setSelectedList] = useState(undefined)
+    const [selectedTask, setSelectedTask] = useState(undefined)
 
     const tasks = useTasks()
     const lists = useLists()
@@ -18,7 +19,9 @@ function TaskContextProvider({ children }) {
                 selectedList,
                 setSelectedList,
                 tasks : tasksFiltered,
-                lists
+                lists,
+                selectedTask,
+                setSelectedTask
             }
         }>
             {children}

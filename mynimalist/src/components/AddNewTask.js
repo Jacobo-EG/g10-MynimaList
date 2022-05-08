@@ -16,8 +16,6 @@ function AddNewTask() {
 
   }
 
-
-
   return (
     <div className="AddNewTask">
         <div className="btn">
@@ -35,6 +33,7 @@ function AddNewTask() {
                   heading="Añadir nueva tarea"
                   text={text}
                   setText={setText}
+                  confirmText="Confirmar"
                   showButtons={true}
                   setShowModal={setShowModal}
               />
