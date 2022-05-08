@@ -28,7 +28,7 @@
     font-size: 1rem;
     cursor: pointer;
     font-weight: bold;
-    transition: filter 300ms ease-in-out;
+    transition: filter 150ms ease-in-out;
     right: 0;
     background-color: #595959;
 }
