@@ -7,6 +7,7 @@ function TaskForm({
     handleSubmit,
     heading = false,
     text,
+    deleteButton = false
 }) {
 
   return (
@@ -19,7 +20,7 @@ function TaskForm({
                 <input
                 type="text"
                 autoFocus/>
-                <button className='confirm'>
+                <button className={`confirm ${deleteButton ? "deleteButton" : ""}`}>
                     {text}
                 </button>
         </div>
