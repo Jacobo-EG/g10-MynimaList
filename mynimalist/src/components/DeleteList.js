@@ -1,31 +1,21 @@
 import "../styles/DeleteList.css";
-import { Trash } from "react-bootstrap-icons";
-import React, { useState } from "react";
-import Modal from "./Modal";
-import ListForm from "./DeleteConfirmForm";
+import React from "react";
+import ListForm from "./ListForm";
 
-function DeleteList(list) {
+function DeleteList({ list }) {
 
-        const [showModal, setShowModal] = useState(false);
+  function handleSubmit(e) {}
 
-        function handleSubmit(e) {
-
-        }
-
-        return (
-                <div className="delete">
-                        <span onClick={() => setShowModal(true)}>
-                                <Trash size="15" />
-                        </span>
-                        
-                        <Modal showModal={showModal} setShowModal={setShowModal}>
-                                <ListForm handleSubmit={handleSubmit}
-                                        heading='Desea eliminar la lista'
-                                        confirmText='Confirmar: La lista se eliminara permanentemente' 
-                                        notConfirmText = 'Cancelar' />
-                        </Modal>
-                </div>
-        )
+  return (
+    <div className="delete">
+      <ListForm
+        handleSubmit={handleSubmit}
+        heading="Desea eliminar la lista"
+        confirmText="Confirmar"
+        deleteButton = {true}
+      />
+    </div>
+  );
 }
 
-export default DeleteList
+export default DeleteList;

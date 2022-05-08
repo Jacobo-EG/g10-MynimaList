@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Lists.css";
 import AddNewList from "./AddNewList";
 import List from "./List";
