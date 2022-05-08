@@ -6,12 +6,12 @@ import List from "./List";
 
 function Lists() {
   
-  const { lists } = useContext(TaskContext)
+  const { lists, setSelectedList } = useContext(TaskContext)
 
   return (
     <div className="Lists">
       <div className="header">
-        <div className="title">
+        <div className="title" onClick={() => setSelectedList(undefined)}>
           <p>Listas</p>
         </div>
         <div className="buttons">
