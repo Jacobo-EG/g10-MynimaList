@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ArrowClockwise, CheckCircleFill, Circle, Trash } from "react-bootstrap-icons";
 import "../styles/Task.css";
 
 function Task({task}) {
+    
+    //STATE
     const [hover, setHover] = useState(false)
+    //CONTEXT
+    // const {selectedTask, setSelectedTask} = useContext(TaskContext) 
+    // const handleDelete = todo => {
+    //     deleteTask(task)
 
+    //     if(selectedTask === task){
+    //         setSelectedTask(undefined)
+    //     }
+    // }
     return (
         <div className="Task">
             <div 
@@ -25,6 +35,7 @@ function Task({task}) {
                     }
                 </div>
                 <div className="text">
+                    {/* onClick = {() => setSelectedTask(task)} */}
                     <p style={{color : task.checked ? "#CCCCCC" : "#000000"}}>{task.text}</p>
                     <div className={`line ${task.checked ? "line-through" : ""}`}></div>
                 </div>
@@ -37,6 +48,7 @@ function Task({task}) {
                     }
                 </div>
                 <div className="delete-task">
+                    {/* onClick = {() => handleDelete(task)} */}
                     {
                         (hover || task.checked) &&
                         <span>
