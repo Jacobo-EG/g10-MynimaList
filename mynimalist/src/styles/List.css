@@ -5,13 +5,14 @@
     padding: 0.25rem;
     margin: 5px;
     font-size: 1rem;
-    text-transform: capitalize;
 }
+
 .name {
     cursor: pointer;
     flex: 1;
     word-break: break-all;
 }
+
 .List span {
     position: absolute;
     border-radius: 20%;
