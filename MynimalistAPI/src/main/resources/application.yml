@@ -5,9 +5,9 @@ server:
 
 spring:
   datasource:
-    password:
+    password: root
     url: jdbc:postgresql://localhost:5432/mynimalist
-    username:
+    username: postgres
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -15,4 +15,4 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
-      show-sql: true
+    show-sql: true
