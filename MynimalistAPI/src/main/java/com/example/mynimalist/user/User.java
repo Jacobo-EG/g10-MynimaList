@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 
 @Getter
@@ -37,6 +38,9 @@ public class User implements UserDetails {
     private String password;
     private Boolean enabled = true;
     private Boolean locked = false;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    private List<com.example.mynimalist.list.List> listas;
 
     public User(String username,
                 String email,

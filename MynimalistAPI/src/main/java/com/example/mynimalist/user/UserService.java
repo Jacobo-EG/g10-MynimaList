@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -48,5 +49,9 @@ public class UserService implements UserDetailsService {
         }
 
         return "error en el usuario o contraseña";
+    }
+
+    public User getUserByUsername(String username){ //TODO: controlar que exista aunque solo deberia ser llamado a partir de metodos que usen token
+        return userRepository.findByUsername(username).get();
     }
 }
