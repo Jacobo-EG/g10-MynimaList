@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(path = "/task")
 public class TaskController {
@@ -38,7 +39,7 @@ public class TaskController {
         return new ResponseEntity<>(taskService.saveTask(taskName, listId),HttpStatus.OK);
     }
 
-    @GetMapping(path = "/get")
+    @PostMapping(path = "/get")
     public ResponseEntity<String> getTasks(@RequestBody ItemRequest request) {
 
         String token = request.getToken();

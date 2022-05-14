@@ -1,79 +1,66 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
+import axios from "axios";
+import { TaskContext } from "../context";
 
-export function useTasks() {
-    const [tasks, setTasks] = useState([])
+// export function useTasks() {
+//     const [tasks, setTasks] = useState([])
 
-    const data = [
-        {
-            id : 'id1',
-            text : "TareaContext1",
-            checked : false,
-            color : '000000',
-            list : 'metodosContext'
-        }, 
-        {
-            id : 'id2',
-            text : "TareaContext2",
-            checked : true,
-            color : '00ff00',
-            list : 'complejaContext'
-        },
-        {
-            id : 'id3',
-            text : "TareaContext3",
-            checked : false,
-            color : '00ff00',
-            list : 'complejaContext'
-        },
-        {
-            id : 'id4',
-            text : "TareaContext4",
-            checked : false,
-            color : '00ff00',
-            list : 'complejaContext'
-        }
-    ]
+//     const data = []
 
-    useEffect( () => {
+//     useEffect( () => {
         
-        setTasks(data)
+//         setTasks(data)
 
-    }, [])
+//     }, [])
 
-    return tasks
-}
+//     return tasks
+// }
 
-export function useLists() {
+// export function useLists() {
 
-    const [lists, setLists] = useState([])
+//     const [lists, setLists] = useState([])
 
-    const dataLists = [
-        { id: 1, name: "metodosContext" },
-        { id: 2, name: "complejaContext" },
-        { id: 3, name: "curvasContext" }
-    ]
 
-    useEffect( () => {
+
+//     const getLists = async () => {
+//         axios.post('http://localhost:8080/list/get', {
+//             token : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbHZhcm8iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvbG9naW4iLCJleHAiOjE2NTI1MTM2NDJ9.bC6EQzSVWOHBZOog63iRJCdEBzT49SCcITFDwoYbfXU"
+//         }).then( response => {
+//             console.log(response.data)
+//             setLists(response.data)
+//         }).catch( e => {
+//             console.log(e)
+//         })
+//     }
+
+//     useEffect( () => {
         
-        setLists(dataLists)
+//         getLists()
 
-    }, [])
+//         const interval=setInterval(()=>{
+//             getLists()
+//            },100000)
+             
+             
+//         return()=>clearInterval(interval)
 
-    return lists
-}
+//     }, [])
 
-export function useTasksFiltered(tasks, selectedList) {
-    const [filteredTasks, setFilteredTasks] = useState([])
+//     return lists
+// }
 
-    useEffect(() => {
-        let data;
-        if(selectedList === undefined) {
-            data = tasks
-        } else {
-            data = tasks.filter(task => task.list === selectedList)
-        }
-        setFilteredTasks(data)
-    }, [tasks, selectedList])
+// export function useTasksFiltered(tasks, selectedList) {
+//     const [filteredTasks, setFilteredTasks] = useState([])
 
-    return filteredTasks
-}
+//     useEffect(() => {
+//         let data;
+//         if(selectedList === undefined) {
+//             data = tasks
+//         } else {
+//             data = tasks.filter(task => task.list === selectedList)
+//         }
+//         setFilteredTasks(data)
+//     }, [tasks, selectedList])
+
+//     return filteredTasks
+// }

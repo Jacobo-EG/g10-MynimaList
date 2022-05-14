@@ -1,4 +1,5 @@
-import React, {useContext} from 'react'
+import React, { useContext, useEffect } from 'react'
+import axios from 'axios';
 import Task from './Task'
 import '../styles/Tasks.css';
 import { TaskContext } from '../context';
@@ -6,7 +7,36 @@ import AddNewTask from './AddNewTask';
 
 function Tasks(){
 
-    const { tasks, selectedList } = useContext(TaskContext)
+    const { lists, tasks, setTasks, tasksFiltered, setTasksFiltered, selectedList, update, tokenA } = useContext(TaskContext)
+
+    useEffect( () => {
+        
+        // const selectedListId = lists.filter(list => list.name === selectedList)
+        // console.log(selectedListId[0].id)
+
+        axios.post('http://localhost:8080/task/get', {
+            token : tokenA,
+            id : "2"
+        }).then( response => {
+            console.log(response.data)
+            setTasks(response.data)
+        }).catch( e => {
+            console.log(e)
+        })
+
+        // if(selectedList === undefined) {
+        //     setTasksFiltered(tasks)
+        // } else {
+        //     const selectedListId = lists.filter(list => list.name === selectedList)
+        //     console.log(selectedListId)
+        //     console.log(tasks.filter(task => task.list_id === selectedListId.id))
+        //     setTasksFiltered(tasks)
+        // }
+        // setTasks(tasksFiltered)
+
+
+
+    }, [update, selectedList])
     
     return (
         

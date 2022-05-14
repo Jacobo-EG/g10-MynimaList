@@ -1,16 +1,24 @@
 import React, { createContext, useState } from 'react'
-import { useTasks, useLists, useTasksFiltered } from '../hooks'
+import { useTasks, useTasksFiltered } from '../hooks'
 
 const TaskContext = createContext()
 
 function TaskContextProvider({ children }) {
 
+    // Estado usado para el token de acceso
+    const [tokenA, setTokenA] = useState("")
+
+    // Estado usado para seleccionar una lista o una tarea
     const [selectedList, setSelectedList] = useState(undefined)
     const [selectedTask, setSelectedTask] = useState(undefined)
 
-    const tasks = useTasks()
-    const lists = useLists()
-    const tasksFiltered = useTasksFiltered(tasks, selectedList)
+    // Estado usado para actualizar las listas y las tareass
+    const [update, setUpdate] = useState(false)
+
+    // Estado usado para obtener las listas, tareas y tareas filtradas por lista
+    const [lists, setLists] = useState([])
+    const [tasks, setTasks] = useState([])
+    const [tasksFiltered, setTasksFiltered] = useState([])
 
     return (
         <TaskContext.Provider
@@ -18,10 +26,18 @@ function TaskContextProvider({ children }) {
             {
                 selectedList,
                 setSelectedList,
-                tasks : tasksFiltered,
+                tasks,
+                setTasks,
+                tasksFiltered,
+                setTasksFiltered,
                 lists,
+                setLists,
                 selectedTask,
-                setSelectedTask
+                setSelectedTask,
+                update,
+                setUpdate,
+                tokenA,
+                setTokenA
             }
         }>
             {children}

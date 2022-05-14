@@ -56,7 +56,7 @@ function Task({task}) {
                     :
                     <>
                         <div className="text" onClick = {() => setSelectedTask(task)} >
-                            <p style={{color : task.checked ? "#CCCCCC" : "#000000"}}>{task.text}</p>
+                            <p style={{color : task.checked ? "#CCCCCC" : "#000000"}}>{task.name}</p>
                             <div className={`line ${task.checked ? "line-through" : ""}`}></div>
                         </div>
 

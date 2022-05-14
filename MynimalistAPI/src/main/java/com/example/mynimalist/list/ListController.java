@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(path = "/list")
 public class ListController {
@@ -44,7 +44,7 @@ public class ListController {
         return new ResponseEntity(listService.saveList(new List(list_name, user)), HttpStatus.OK);
     }
 
-    @GetMapping (path = "/get")
+    @PostMapping (path = "/get")
     public ResponseEntity<String> getLists(@RequestBody ItemRequest request) {
 
         String token = request.getToken();

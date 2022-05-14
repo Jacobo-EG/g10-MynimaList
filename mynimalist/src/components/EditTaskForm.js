@@ -14,7 +14,7 @@ function TaskForm({}) {
 
   useEffect(() => {
     if(selectedTask){
-        setText(selectedTask.text)
+        setText(selectedTask.name)
     }
   }, [selectedTask])
 
