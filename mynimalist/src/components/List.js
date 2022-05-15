@@ -17,7 +17,7 @@ function List({ list }) {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className="name" onClick={() => setSelectedList(list.name)}>{list.name}</div>
+      <div className="name" onClick={() => setSelectedList(list.id)}>{list.name}</div>
       <div className="buttons">
         {hover && 
           <ListButtons list={list}/>

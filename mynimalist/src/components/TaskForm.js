@@ -11,10 +11,6 @@ function TaskForm({
     setShowModal = false
 }) {
 
-  function handleSubmit(e) {
-
-  }
-
   return (
     <form className='TaskForm' onSubmit={handleSubmit}>
         <div className="text">
@@ -31,21 +27,6 @@ function TaskForm({
                     {confirmText}
                 </button>
         </div>
-        {/* <div className="pick-project">
-            <div className="title">
-                <Palette />
-                <p>Elige una lista</p>
-            </div>
-            <div className="lists">
-                {
-                    lists.map( list =>
-                        <div className="list" key={list.id}>
-                            {list.name}
-                        </div>
-                    )
-                }
-            </div>
-        </div> */}
     </form>
   );
 }

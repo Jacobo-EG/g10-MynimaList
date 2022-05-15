@@ -9,7 +9,7 @@ function TaskContextProvider({ children }) {
     const [tokenA, setTokenA] = useState("")
 
     // Estado usado para seleccionar una lista o una tarea
-    const [selectedList, setSelectedList] = useState(undefined)
+    const [selectedList, setSelectedList] = useState(-1)
     const [selectedTask, setSelectedTask] = useState(undefined)
 
     // Estado usado para actualizar las listas y las tareass
@@ -18,7 +18,6 @@ function TaskContextProvider({ children }) {
     // Estado usado para obtener las listas, tareas y tareas filtradas por lista
     const [lists, setLists] = useState([])
     const [tasks, setTasks] = useState([])
-    const [tasksFiltered, setTasksFiltered] = useState([])
 
     return (
         <TaskContext.Provider
@@ -28,8 +27,6 @@ function TaskContextProvider({ children }) {
                 setSelectedList,
                 tasks,
                 setTasks,
-                tasksFiltered,
-                setTasksFiltered,
                 lists,
                 setLists,
                 selectedTask,

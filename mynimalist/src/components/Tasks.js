@@ -7,16 +7,15 @@ import AddNewTask from './AddNewTask';
 
 function Tasks(){
 
-    const { lists, tasks, setTasks, tasksFiltered, setTasksFiltered, selectedList, update, tokenA } = useContext(TaskContext)
+    const { lists, tasks, setTasks, selectedList, update, tokenA } = useContext(TaskContext)
+
+    const selectedListName = lists.filter(list => list.id === selectedList)
 
     useEffect( () => {
-        
-        // const selectedListId = lists.filter(list => list.name === selectedList)
-        // console.log(selectedListId[0].id)
 
         axios.post('http://localhost:8080/task/get', {
             token : tokenA,
-            id : "2"
+            id : selectedList
         }).then( response => {
             console.log(response.data)
             setTasks(response.data)
@@ -24,28 +23,16 @@ function Tasks(){
             console.log(e)
         })
 
-        // if(selectedList === undefined) {
-        //     setTasksFiltered(tasks)
-        // } else {
-        //     const selectedListId = lists.filter(list => list.name === selectedList)
-        //     console.log(selectedListId)
-        //     console.log(tasks.filter(task => task.list_id === selectedListId.id))
-        //     setTasksFiltered(tasks)
-        // }
-        // setTasks(tasksFiltered)
-
-
-
     }, [update, selectedList])
     
     return (
         
         <div className = 'Tasks'>
             <div className = 'selected-list'>
-                { (selectedList === undefined) ?
-                    "Inicio"
+                { (selectedList === -1) ?
+                    "Selecciona una lista para comenzar"
                     : 
-                    selectedList
+                    selectedListName[0].name // Revisar si esta solución da fallos
                 }
             </div>
             <div className = 'tasks'>

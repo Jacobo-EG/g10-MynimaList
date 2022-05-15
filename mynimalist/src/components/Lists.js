@@ -26,7 +26,7 @@ useEffect( () => {
   return (
     <div className="Lists">
       <div className="header">
-        <div className="title" onClick={() => setSelectedList(undefined)}>
+        <div className="title" onClick={() => setSelectedList(-1)}>
           <p>Listas</p>
         </div>
         <div className="buttons">

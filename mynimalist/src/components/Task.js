@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect} from "react";
+import axios from 'axios';
 import {CheckCircleFill, Circle, Trash } from "react-bootstrap-icons";
 import { TaskContext } from "../context";
 import "../styles/Task.css";
@@ -11,17 +12,19 @@ function Task({task}) {
     const [text, setText] = useState("");
 
     //CONTEXT
-    const {selectedTask, setSelectedTask} = useContext(TaskContext) 
+    const {selectedTask, setSelectedTask, tokenA, update, setUpdate} = useContext(TaskContext) 
     
-    // const handleDelete = todo => {
-    //     deleteTask(task)
-
-    //     if(selectedTask === task){
-    //         setSelectedTask(undefined)
-    //     }
-    // }
-
-    function handleSubmit(e) {}
+    const handleDelete = task => {
+        axios.post('http://localhost:8080/task/delete', {
+          token : tokenA,
+          id : task.id
+        }).then( response => {
+            setUpdate(!update)
+            console.log(response.data)
+        }).catch( e => {
+            console.log(e.response)
+        })
+    }
 
     useEffect(() => {
         if (selectedTask) {
@@ -61,10 +64,9 @@ function Task({task}) {
                         </div>
 
                         <div className="delete-task">
-                            {/* onClick = {() => handleDelete(task)} */}
                             {
                                 (hover || task.checked) &&
-                                <span>
+                                <span onClick = {() => handleDelete(task)}>
                                     <Trash />
                                 </span>
                             }

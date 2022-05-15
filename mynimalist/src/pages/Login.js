@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import axios from 'axios';
 import '../styles/Login.css';
 import LogoWriting from "../components/LogoWriting";
 import { useNavigate } from 'react-router-dom';
@@ -19,8 +20,21 @@ function Login() {
   const handleClickSignIn = () => {
     let body = { "user": username, "password": password }
     console.log(body);
-    navigate('/main')
-    setTokenA("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbHZhcm8iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvbG9naW4iLCJleHAiOjE2NTI1MjU2NTR9.b13YNFwzUprW7ftMXgIM-yrEmssFlC0K-4tqzXy_DFk")
+    axios.post('http://localhost:8080/login', 
+    {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    },
+    {
+      username : username, 
+      password : password
+    }).then( response => {
+        navigate('/main')
+        setTokenA(response.data)
+        console.log(response.data)
+    }).catch( e => {
+        console.log(e.response)
+    })
+
   };
 
   return (
