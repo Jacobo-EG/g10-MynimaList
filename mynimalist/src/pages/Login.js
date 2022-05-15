@@ -20,20 +20,20 @@ function Login() {
   const handleClickSignIn = () => {
     let body = { "user": username, "password": password }
     console.log(body);
-    axios.post('http://localhost:8080/login', 
-    {
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-    },
-    {
-      username : username, 
-      password : password
-    }).then( response => {
-        navigate('/main')
-        setTokenA(response.data)
-        console.log(response.data)
-    }).catch( e => {
-        console.log(e.response)
-    })
+    // axios.post('http://localhost:8080/login', 
+    // {
+    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    // },
+    // {
+    //   username : username, 
+    //   password : password
+    // }).then( response => {
+    //     navigate('/main')
+    //     setTokenA(response.data)
+    //     console.log(response.data)
+    // }).catch( e => {
+    //     console.log(e.response)
+    // })
 
   };
 
