@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import axios from 'axios';
 import '../styles/SignUp.css';
 import LogoWriting from "../components/LogoWriting";
 import { useNavigate } from 'react-router-dom';
@@ -18,10 +19,17 @@ function SignUp() {
   };
 
   const handleClickSignUp = () => {
-    let body = { "user": usernameReg, "password": passwordReg }
-    console.log(body);
-    navigate('/main')
-    setTokenA("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbHZhcm8iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvbG9naW4iLCJleHAiOjE2NTI1MjU2NTR9.b13YNFwzUprW7ftMXgIM-yrEmssFlC0K-4tqzXy_DFk")
+    axios.post('http://localhost:8080/registration', 
+    {
+      username : usernameReg, 
+      email : mailReg,
+      password : passwordReg
+    }).then( response => {
+        navigate('/')
+        console.log(response.data)
+    }).catch( e => {
+        console.log(e.response)
+    })
   };
 
   return (
@@ -37,7 +45,7 @@ function SignUp() {
               console.log(mailReg);
             }}
           />
-          <label>Correo Electronico</label>
+          <label>Correo electronico</label>
         </div>
         <div className="user-container">
           <input

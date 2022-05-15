@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import axios from 'axios';
+import qs from 'qs';
 import '../styles/Login.css';
 import LogoWriting from "../components/LogoWriting";
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +8,9 @@ import { TaskContext } from '../context';
 
 function Login() {
 
-  const { setTokenA } = useContext(TaskContext)
+  const { setTokenA, setSelectedList } = useContext(TaskContext)
+
+  setSelectedList(-1) // REVISAR
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -18,24 +21,18 @@ function Login() {
   };
 
   const handleClickSignIn = () => {
-    let body = { "user": username, "password": password }
+    var qs = require('qs');
+    let body = { username: username, password: password }
     console.log(body);
-    setTokenA("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbHZhcm8iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvbG9naW4iLCJleHAiOjE2NTI2MTI5NzN9.dCuR4TjqkT67nfwlSG-ObpS694TMeyTbocxJZc0T8WU")
-    navigate('/main')
-    // axios.post('http://localhost:8080/login', 
-    // {
-    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-    // },
-    // {
-    //   username : username, 
-    //   password : password
-    // }).then( response => {
-    //     navigate('/main')
-    //     setTokenA(response.data)
-    //     console.log(response.data)
-    // }).catch( e => {
-    //     console.log(e.response)
-    // })
+    axios.post('http://localhost:8080/login', qs.stringify(body), 
+    {
+      headers: { 'content-type': 'application/x-www-form-urlencoded' }
+    }).then( response => {
+      setTokenA(response.data.access_token)  
+      navigate('/main')
+    }).catch( e => {
+        console.log(e.response)
+    })
 
   };
 
