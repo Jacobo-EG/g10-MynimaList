@@ -20,6 +20,8 @@ function Login() {
   const handleClickSignIn = () => {
     let body = { "user": username, "password": password }
     console.log(body);
+    setTokenA("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbHZhcm8iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvbG9naW4iLCJleHAiOjE2NTI2MTI5NzN9.dCuR4TjqkT67nfwlSG-ObpS694TMeyTbocxJZc0T8WU")
+    navigate('/main')
     // axios.post('http://localhost:8080/login', 
     // {
     //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
