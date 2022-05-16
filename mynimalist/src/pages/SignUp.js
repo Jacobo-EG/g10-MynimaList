@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../styles/SignUp.css";
+import "../styles/Login.css";
 import LogoWriting from "../components/LogoWriting";
 import { useNavigate } from "react-router-dom";
 
@@ -9,12 +9,11 @@ function SignUp() {
   const [usernameReg, setUsernameReg] = useState("");
   const [passwordReg, setPasswordReg] = useState("");
 
-  // const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-  // if(emailRegex.test(mailReg)) {
-  //   alert("correcto")
-  // } else {
-  //   alert("nofunciona")
-  // }
+  const [emailCorrecto, setEmailCorrecto] = useState(true);
+  const [usernameCorrecto, setUsernameCorrecto] = useState(true);
+  const [passwordCorrecta, setPasswordCorrecta] = useState(true);
+
+  const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
   let navigate = useNavigate();
   const handleClickSignIn = () => {
@@ -22,7 +21,9 @@ function SignUp() {
   };
 
   const handleClickSignUp = () => {
-    axios
+
+    if(emailRegex.test(mailReg) && usernameReg.length >= 4 && passwordReg.length >= 6) {
+      axios
       .post("http://localhost:8080/registration", {
         username: usernameReg,
         email: mailReg,
@@ -34,6 +35,9 @@ function SignUp() {
       .catch((e) => {
         console.log(e.response);
       });
+    } else {
+      console.log("NO ESTOY MANDANDO NADA")
+    }
   };
 
   return (
@@ -46,8 +50,12 @@ function SignUp() {
             value={mailReg}
             onChange={(e) => {
               setMailReg(e.target.value);
+              setEmailCorrecto(emailRegex.test(mailReg));
             }}
           />
+            {
+              !emailCorrecto && <p className="error">Email no valido</p>
+            }
           <label>Correo electronico</label>
         </div>
         <div className="user-container">
@@ -56,8 +64,12 @@ function SignUp() {
             value={usernameReg}
             onChange={(e) => {
               setUsernameReg(e.target.value);
+              setUsernameCorrecto(usernameReg.length >= 3);
             }}
-          />
+            />
+            {
+              !usernameCorrecto && <p className="error">El usuario debe tener al menos 4 carácteres</p>
+            }
           <label>Usuario</label>
         </div>
         <div className="user-container">
@@ -66,8 +78,12 @@ function SignUp() {
             value={passwordReg}
             onChange={(e) => {
               setPasswordReg(e.target.value);
+              setPasswordCorrecta(passwordReg.length >= 5)
             }}
           />
+            {
+              !passwordCorrecta && <p className="error">La contraseña debe tener al menos 6 carácteres</p>
+            }
           <label>Contraseña</label>
         </div>
         <button type="button" className="sign-in" onClick={handleClickSignIn}>

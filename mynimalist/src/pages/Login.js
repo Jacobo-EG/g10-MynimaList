@@ -28,7 +28,9 @@ function Login() {
       setTokenA(response.data.access_token)  
       navigate('/main')
     }).catch( e => {
-        console.log(e.response)
+        if(e.response.status === 401) {
+          alert("Usuario o contraseña incorrectos")
+        }
     })
 
   };

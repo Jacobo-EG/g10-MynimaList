@@ -91,3 +91,10 @@ html,  body {
 .sign-up:hover {
   color: black;
 }
+
+.error {
+  position: absolute;
+  top: 45px;
+  font-size: 0.7rem;
+  color: red;
+}
