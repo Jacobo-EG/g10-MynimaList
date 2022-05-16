@@ -2,12 +2,12 @@ html,  body {
     background-color: #f8f9fa;
 }
 
-.login-container {
+.about-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 400px;
-    padding: 40px;
+    width: 11 00px;
+    padding: 80px;
     transform: translate(-50%, -50%);
     background: #dee2e6;
     box-sizing: border-box;
@@ -17,4 +17,12 @@ html,  body {
   
   .login-container .user-container {
     position: relative;
+  }
+
+  .logo{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 10px;
+    padding: 80px;
   }
