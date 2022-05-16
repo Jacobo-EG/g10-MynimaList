@@ -3,12 +3,14 @@ package com.example.mynimalist.task;
 import com.example.mynimalist.list.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
 @Getter
+@Setter
 public class Task {
 
     @Id
@@ -23,6 +25,7 @@ public class Task {
     )
     private Long id;
     private String name;
+    private Boolean finished = false;
 
     @ManyToOne
     private List list;

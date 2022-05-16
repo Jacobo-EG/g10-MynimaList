@@ -10,6 +10,6 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     List<Task> findAllByList(com.example.mynimalist.list.List list);
 
-    void deleteAllByList(com.example.mynimalist.list.List list);
+    void deleteByList(com.example.mynimalist.list.List list);
 
 }

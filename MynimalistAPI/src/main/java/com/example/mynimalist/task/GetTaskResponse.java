@@ -8,4 +8,5 @@ import lombok.Getter;
 public class GetTaskResponse {
     private Long id;
     private String name;
+    private Boolean finished;
 }
