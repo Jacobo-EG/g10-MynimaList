@@ -29,6 +29,20 @@ function Task({ task }) {
       });
   };
 
+  const handleCheck = (task) => {
+    axios.post('http://localhost:8080/task/updatestatus', {
+      token : tokenA,
+      name : task.text,
+      id : task.id,
+      finished : !task.finished
+    }).then( response => {
+        console.log(response.data)
+        setUpdate(!update)
+    }).catch( e => {
+        console.log(e.response)
+    })
+  }; 
+
   useEffect(() => {
     if (selectedTask) {
       setText(selectedTask.text);
@@ -42,13 +56,13 @@ function Task({ task }) {
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        <div className="check-task">
-          {task.checked ? (
+        <div className="check-task" onClick={() => handleCheck(task)}>
+          {task.finished ? (
             <span className="checked">
               <CheckCircleFill color="#CCCCCC" />
             </span>
           ) : (
-            <span className="unchecked">
+            <span className="unchecked" >
               <Circle color={task.color} />
             </span>
           )}
@@ -59,11 +73,11 @@ function Task({ task }) {
         ) : (
           <>
             <div className="text" onClick={() => setSelectedTask(task)}>
-              <p style={{ color: task.checked ? "#CCCCCC" : "#000000" }}>
+              <p style={{ color: task.finished ? "#CCCCCC" : "#000000" }}>
                 {task.name}
               </p>
               <div
-                className={`line ${task.checked ? "line-through" : ""}`}
+                className={`line ${task.finished ? "line-through" : ""}`}
               ></div>
             </div>
 

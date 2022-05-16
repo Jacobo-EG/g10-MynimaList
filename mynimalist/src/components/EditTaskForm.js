@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import axios from "axios";
 import { CheckSquare } from "react-bootstrap-icons";
 import { TaskContext } from "../context";
 import "../styles/EditTaskForm.css";
@@ -10,7 +11,7 @@ function TaskForm() {
 
   // Context
 
-  const { selectedTask, setSelectedTask } = useContext(TaskContext)
+  const { selectedTask, setSelectedTask, tokenA, setUpdate, update } = useContext(TaskContext)
 
   useEffect(() => {
     if(selectedTask){
@@ -20,7 +21,16 @@ function TaskForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    setSelectedTask(undefined)
+    axios.post('http://localhost:8080/task/updatename', {
+      token : tokenA,
+      id : selectedTask.id,
+      name : text
+    }).then( response => {
+        console.log(response.data)
+        setUpdate(!update)
+    }).catch( e => {
+        console.log(e.response)
+    })
   }
 
   return (

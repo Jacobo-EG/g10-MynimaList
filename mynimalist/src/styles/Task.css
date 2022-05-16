@@ -27,7 +27,7 @@
     height: 1px;
     background: #CCCCCC;
     position: absolute;
-    top: 25%;
+    top: 50%;
     width: 0;
     transition: width 250ms ease-in-out;
 }

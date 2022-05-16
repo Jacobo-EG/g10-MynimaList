@@ -1,11 +1,14 @@
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
 import "../styles/ListButtons.css";
 import { Pencil, Trash } from "react-bootstrap-icons";
 import RenameList from "./RenameList";
 import DeleteList from "./DeleteList";
 import Modal from "./Modal";
+import { TaskContext } from '../context';
 
 function ListButtons({list}) {
+
+  const { setSelectedList } = useContext(TaskContext)
 
   const [showModalEdit, setShowModalEdit] = useState(false)
   const [showModalDelete, setShowModalDelete] = useState(false)
@@ -18,7 +21,7 @@ function ListButtons({list}) {
         <span className="delete" onClick={() => setShowModalDelete(true)}>
           <Trash size="18" />
         </span>
-        <Modal showModal={showModalEdit} setShowModal={setShowModalEdit}>
+        <Modal showModal={showModalEdit} setShowModal={setShowModalEdit} >
           <RenameList list={list} setShowModal={setShowModalEdit}/>
         </Modal>
         <Modal showModal={showModalDelete} setShowModal={setShowModalDelete}>
