@@ -91,3 +91,28 @@ html,  body {
 .sign-up:hover {
   color: black;
 }
+
+.about-us {
+  position: absolute;
+  display: flex;
+  right: 0px;
+  padding: 10px 20px;
+  font-family: 'Times New Roman', Times, serif;
+  color: blue;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: full-width;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  background: none!important;
+  border: none;
+  cursor: pointer;
+}
+.about-us:hover {
+  text-decoration: underline;
+}
+.about-us:link {
+  color: red;
+}

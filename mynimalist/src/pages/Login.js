@@ -5,7 +5,6 @@ import '../styles/Login.css';
 import LogoWriting from "../components/LogoWriting";
 import { useNavigate } from 'react-router-dom';
 import { TaskContext } from '../context';
-
 function Login() {
 
   const { setTokenA, setSelectedList } = useContext(TaskContext)
@@ -35,6 +34,9 @@ function Login() {
     })
 
   };
+  const handleClickAboutUs = () => {
+    navigate('/sobre-nosotros')
+    }
 
   return (
     <div className="login-container">
@@ -77,6 +79,13 @@ function Login() {
           Registrarse
         </button>
       </form>
+      <button
+          type="button"
+          className="about-us"
+          onClick={handleClickAboutUs}
+        >
+          Sobre Nosotros
+        </button>
     </div>
   );
 }
