@@ -4,12 +4,11 @@ import ListButtons from "./ListButtons";
 import { TaskContext } from "../context"
 
 function List({ list }) {
-  // State
+  // STATE
   const [hover, setHover] = useState(false);
 
-  // Context
-
-  const { selectedList, setSelectedList } = useContext(TaskContext)
+  // CONTEXT
+  const { setSelectedList } = useContext(TaskContext)
 
   return (
     <div

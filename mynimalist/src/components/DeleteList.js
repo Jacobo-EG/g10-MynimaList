@@ -6,7 +6,7 @@ import { TaskContext } from "../context";
 
 function DeleteList({ list }) {
 
-  const { update, setUpdate, tokenA } = useContext(TaskContext)
+  const { update, setUpdate, tokenA, setSelectedList } = useContext(TaskContext)
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -15,8 +15,8 @@ function DeleteList({ list }) {
       token : tokenA,
       id : list.id
     }).then( response => {
+        setSelectedList(-1)
         setUpdate(!update)
-        console.log(response.data)
     }).catch( e => {
         console.log(e.response)
     })

@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react'
-import { useTasks, useTasksFiltered } from '../hooks'
 
 const TaskContext = createContext()
 

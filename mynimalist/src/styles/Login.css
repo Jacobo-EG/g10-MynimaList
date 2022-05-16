@@ -113,6 +113,10 @@ html,  body {
 .about-us:hover {
   text-decoration: underline;
 }
-.about-us:link {
+
+.error {
+  position: absolute;
+  top: 45px;
+  font-size: 0.7rem;
   color: red;
 }

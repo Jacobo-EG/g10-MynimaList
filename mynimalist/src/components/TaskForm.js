@@ -1,14 +1,11 @@
 import React from "react";
 import "../styles/TaskForm.css";
-import { TaskContext } from "../context";
 
 function TaskForm({
     handleSubmit,
-    heading = false,
+    heading,
     text, setText,
-    confirmText,
-    showButton = false,
-    setShowModal = false
+    confirmText
 }) {
 
   return (

@@ -4,7 +4,6 @@ import Modal from "./Modal";
 import ListForm from "./ListForm";
 import { PlusSquare } from "react-bootstrap-icons";
 import { TaskContext } from "../context";
-import { useLists } from "../hooks";
 
 function AddNewList() {
   // State
@@ -20,8 +19,9 @@ function AddNewList() {
       token : tokenA,
       name : listName
     }).then( response => {
+        setListName("")
+        setShowModal(false)
         setUpdate(!update)
-        console.log(response.data)
     }).catch( e => {
         console.log(e.response)
     })
