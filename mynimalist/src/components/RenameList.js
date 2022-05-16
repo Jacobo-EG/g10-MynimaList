@@ -1,28 +1,45 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ListForm from "./ListForm";
+import { TaskContext } from "../context";
+
+import axios from "axios";
 
 
 function RenameList({ list }) {
 
-    const [newListName, setNewListName] = useState(list.name)
+    const [showModal, setShowModal] = useState(false);
+    const [newListName, setNewListName] = useState('')
+
+    const { update, setUpdate, tokenA } = useContext(TaskContext)
 
     function handleSubmit(e) {
         e.preventDefault()
 
-        /* Codigo renombrar */
+        axios.post('http://localhost:8080/list/rename', {
+            token : tokenA,
+            id : list.id,
+            name : newListName
+        }).then( response => {
+            setNewListName("")
+            setShowModal(false)
+            setUpdate(!update)
+        }).catch( e => {
+            console.log(e.response)
+        })
         
     }
 
     return (
-        <div className="edit">
-            <ListForm 
+    <div className="RenameList">
+      
+        <ListForm 
                 handleSubmit={handleSubmit}
                 heading='Editar nombre lista'
                 value = {newListName}
                 setValue = {setNewListName}
                 confirmText='Confirmar' />
-        </div>
-    )
+    </div>
+    );
 }
 
-export default RenameList
+export default RenameList;

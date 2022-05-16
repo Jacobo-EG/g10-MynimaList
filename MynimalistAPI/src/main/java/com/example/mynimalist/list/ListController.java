@@ -84,4 +84,20 @@ public class ListController {
         return new ResponseEntity<>(listService.deleteList(listId), HttpStatus.OK);
     }
 
+    @PostMapping (path = "/rename")
+    public ResponseEntity<String> renameList(@RequestBody ItemRequest request) {
+
+        String token = request.getToken();
+
+        String secret = "Secret_Key";
+        Algorithm algorithm = Algorithm.HMAC256(secret.getBytes());
+        JWTVerifier verifier = JWT.require(algorithm).build();
+        DecodedJWT decodedJWT = verifier.verify(token);
+
+        String name = request.getName();
+        Long listId = request.getId();
+
+        return new ResponseEntity<>(listService.renameList(listId,name), HttpStatus.OK);
+    }
+
 }

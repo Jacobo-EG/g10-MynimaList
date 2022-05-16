@@ -5,9 +5,9 @@ server:
 
 spring:
   datasource:
-    password: root
+    password:
     url: jdbc:postgresql://localhost:5432/mynimalist
-    username: postgres
+    username: usuario
   jpa:
     hibernate:
       ddl-auto: update

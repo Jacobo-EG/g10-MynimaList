@@ -32,6 +32,11 @@ public class ListService {
         return "Lista borrada correctamente";
     }
 
+    public String renameList(Long id,String name){
+        listRepository.getById(id).setName(name);
+        return "Lista renombrada correctamente";
+    }
+
     public List getListById(Long id){
         return listRepository.getById(id);
     }
