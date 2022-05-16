@@ -15,7 +15,6 @@ useEffect( () => {
     axios.post('http://localhost:8080/list/get', {
       token : tokenA
   }).then( response => {
-      console.log(response.data)
       setLists(response.data)
   }).catch( e => {
       console.log(e)

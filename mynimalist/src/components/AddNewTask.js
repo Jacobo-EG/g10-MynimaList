@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from 'axios';
 import Modal from "./Modal";
 import "../styles/AddNewTask.css";
@@ -21,8 +21,9 @@ function AddNewTask() {
         name : text,
         id : selectedList
       }).then( response => {
+          setText("")
+          setShowModal(false)
           setUpdate(!update)
-          console.log(response.data)
       }).catch( e => {
           console.log(e.response)
       })
@@ -46,8 +47,6 @@ function AddNewTask() {
                   text={text}
                   setText={setText}
                   confirmText="Confirmar"
-                  showButtons={true}
-                  setShowModal={setShowModal}
               />
           </Modal>
         }

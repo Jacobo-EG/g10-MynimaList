@@ -8,9 +8,7 @@ import { TaskContext } from '../context';
 
 function Login() {
 
-  const { setTokenA, setSelectedList } = useContext(TaskContext)
-
-  setSelectedList(-1) // REVISAR
+  const { setTokenA } = useContext(TaskContext)
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -21,9 +19,8 @@ function Login() {
   };
 
   const handleClickSignIn = () => {
-    var qs = require('qs');
+
     let body = { username: username, password: password }
-    console.log(body);
     axios.post('http://localhost:8080/login', qs.stringify(body), 
     {
       headers: { 'content-type': 'application/x-www-form-urlencoded' }
@@ -46,7 +43,6 @@ function Login() {
             value={username}
             onChange = { (e) => {
               setUsername(e.target.value);
-              console.log(username);
             }}
           />
           <label>Usuario</label>
@@ -57,7 +53,6 @@ function Login() {
             value={password}
             onChange = { (e) => {
               setPassword(e.target.value);
-              console.log(password);
             }}
           />
           <label>Contraseña</label>

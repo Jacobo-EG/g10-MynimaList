@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  border: 1px solid #ebebeb;
 }
 
 .Header p {
@@ -13,8 +12,8 @@
   font-weight: bold;
 }
 
-.Header a {
-  text-decoration: none;
+.Header span {
   display: flex;
-  justify-content: flex-end;
+  position: relative;
+  top: 2px;
 }

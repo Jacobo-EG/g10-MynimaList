@@ -5,7 +5,6 @@ import Body from "../components/Body";
 import Header from "../components/Header";
 import Lists from "../components/Lists";
 import Tasks from "../components/Tasks";
-import EditTask from "../components/EditTask";
 
 function Main() {
   return (

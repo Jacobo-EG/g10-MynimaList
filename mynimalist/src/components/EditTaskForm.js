@@ -3,7 +3,7 @@ import { CheckSquare } from "react-bootstrap-icons";
 import { TaskContext } from "../context";
 import "../styles/EditTaskForm.css";
 
-function TaskForm({}) {
+function TaskForm() {
 
   // State
   const [text, setText] = useState('')

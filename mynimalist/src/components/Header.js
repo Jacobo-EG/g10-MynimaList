@@ -1,17 +1,25 @@
-import React from 'react'
-import '../styles/Header.css';
-import { XCircleFill } from 'react-bootstrap-icons'
+import React, { useContext } from "react";
+import "../styles/Header.css";
+import { EmojiWink } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
+import { TaskContext } from "../context";
 
-function Header(){
+function Header() {
+  const { setSelectedList } = useContext(TaskContext);
 
-    return (
-        <div className='Header'>
-            <p>MynimaList</p>
-            <span onClick={() => alert("Cerrar sesion")} href="#">
-                <XCircleFill color='black' />
-            </span>
-        </div>
-    )
+  let navigate = useNavigate();
+  const handleClickLogOut = () => {
+    setSelectedList(-1);
+    navigate("/");
+  };
+  return (
+    <div className="Header">
+      <p>MynimaList</p>
+      <span onClick={handleClickLogOut}>
+        <EmojiWink color="black" />
+      </span>
+    </div>
+  );
 }
 
-export default Header
+export default Header;
