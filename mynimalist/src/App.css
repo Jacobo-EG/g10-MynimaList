@@ -1,3 +1,26 @@
+html {
+  --primary-color: #CCCCCC;
+  --secondary-color: #F2F2F2;
+  --text-color: black;
+  --text-color-login: #495057;
+  --text-color-error: #c52233;
+  --text-color-hover: black;
+  --button-color: #7F7F7F;
+  --button-text-color: white;
+  --span-hover: #adb5bd;
+}
+
+html[data-theme="dark"] {
+  --primary-color: #11121E;
+  --secondary-color: #20222D;
+  --text-color: white;
+  --text-color-login: white;
+  --text-color-error: #74121d;
+  --text-color-hover: white;
+  --button-color: #4F505C;
+  --span-hover: #4F505C;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -1,13 +1,12 @@
 .wrapper {
     height: 20vh;
-    /*This part is important for centering*/
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
   .typing-demo {
-    color: #343a40;
+    color: var(--text-color-login);
     width: 10ch;
     animation: typing 2s steps(10), blink .5s step-end infinite alternate;
     white-space: nowrap;

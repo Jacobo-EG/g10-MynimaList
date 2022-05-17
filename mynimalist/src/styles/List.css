@@ -12,6 +12,7 @@
   text-justify: inter-word;
   word-break: break-all;
   cursor: pointer;
+  color: var(--text-color);
 }
 
 .List span {
@@ -26,6 +27,6 @@
   }
   
 .List span:hover {
-    background-color: #adb5bd;
+    background-color: var(--span-hover);
     transition: all 150ms ease-in-out;
   }

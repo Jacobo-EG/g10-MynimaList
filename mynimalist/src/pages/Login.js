@@ -1,10 +1,12 @@
-  import React, { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import axios from 'axios';
 import qs from 'qs';
 import '../styles/Login.css';
 import LogoWriting from "../components/LogoWriting";
+import Theme from "../components/Theme";
 import { useNavigate } from 'react-router-dom';
 import { TaskContext } from '../context';
+
 function Login() {
 
   const { setTokenA } = useContext(TaskContext)
@@ -81,8 +83,11 @@ function Login() {
           className="about-us"
           onClick={handleClickAboutUs}
         >
-          Sobre Nosotros
+          Sobre nosotros
         </button>
+        <span className="theme">
+          <Theme />
+        </span>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 .TaskForm{
-    background-color: white;
+    background-color: var(--secondary-color);
     padding: 1rem;
     position: relative;
     padding-bottom: 40px;
@@ -11,6 +11,8 @@
     border: none;
     font-size: 1.2rem;
     border-bottom: 1px solid #7f7f7f;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 .TaskForm input:focus{
     outline: none;
@@ -24,13 +26,13 @@
     height: 40px;
     width: 100%;
     border: none;
-    color: white;
+    color: var(--button-text-color);
     font-size: 1rem;
     cursor: pointer;
     font-weight: bold;
     transition: filter 150ms ease-in-out;
     right: 0;
-    background-color: #595959;
+    background-color: var(--button-color);
 }
 .confirm:hover{
     filter: brightness(1.1);

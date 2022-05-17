@@ -73,7 +73,7 @@ function Task({ task }) {
         ) : (
           <>
             <div className="text" onClick={() => setSelectedTask(task)}>
-              <p style={{ color: task.finished ? "#CCCCCC" : "#000000" }}>
+              <p>
                 {task.name}
               </p>
               <div

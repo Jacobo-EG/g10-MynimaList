@@ -1,4 +1,3 @@
-import "../styles/DeleteList.css";
 import React, { useContext }  from "react";
 import axios from "axios";
 import ListForm from "./ListForm";

@@ -11,13 +11,13 @@ function TaskForm() {
 
   // Context
 
-  const { selectedTask, setSelectedTask, tokenA, setUpdate, update } = useContext(TaskContext)
+  const { selectedTask, tokenA, setUpdate, update, checked } = useContext(TaskContext)
 
   useEffect(() => {
     if(selectedTask){
         setText(selectedTask.name)
     }
-  }, [selectedTask])
+  }, [selectedTask, checked])
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -43,7 +43,7 @@ function TaskForm() {
             autoFocus
           />
           <span className="save" onClick={handleSubmit}>
-            <CheckSquare color="black" size="15"/>
+            <CheckSquare color={checked ? "white" : "black"}  size="15"/>
           </span>
       </div>
     </form>

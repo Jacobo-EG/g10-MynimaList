@@ -16,6 +16,7 @@
     flex: 1;
     margin: 0 10px;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 .Task .task-container .text span {

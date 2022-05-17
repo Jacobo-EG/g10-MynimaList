@@ -15,6 +15,7 @@
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
+  color: var(--text-color);
 }
 .buttons {
   display: flex;
@@ -32,7 +33,7 @@
 }
 
 .buttons span:hover {
-  background-color: #adb5bd;
+  background-color: var(--span-hover);
   transition: all 150ms ease-in-out;
 }
 

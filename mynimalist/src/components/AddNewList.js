@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import Modal from "./Modal";
 import ListForm from "./ListForm";
@@ -8,9 +8,9 @@ import { TaskContext } from "../context";
 function AddNewList() {
   // State
   const [showModal, setShowModal] = useState(false);
-  const [listName, setListName] = useState('')
+  const [listName, setListName] = useState('');
   // Context
-  const { update, setUpdate, tokenA } = useContext(TaskContext)
+  const { update, setUpdate, tokenA, checked } = useContext(TaskContext)
 
   function handleSubmit (e) {
     e.preventDefault()
@@ -27,11 +27,15 @@ function AddNewList() {
     })
   }
 
+  useEffect( () => {
+    
+  }, [checked])
+
   return (
     <div className="AddNewList">
       <div className="add-button">
         <span onClick={() => setShowModal(true)}>
-          <PlusSquare size="18" />
+          <PlusSquare color={checked ? "white" : "black"} size="18" />
         </span>
         <Modal showModal={showModal} setShowModal={setShowModal}>
           <ListForm 

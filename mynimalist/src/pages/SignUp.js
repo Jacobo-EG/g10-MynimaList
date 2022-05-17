@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/Login.css";
 import LogoWriting from "../components/LogoWriting";
 import { useNavigate } from "react-router-dom";
+import Theme from "../components/Theme";
 
 function SignUp() {
   const [mailReg, setMailReg] = useState("");
@@ -35,8 +36,6 @@ function SignUp() {
       .catch((e) => {
         console.log(e.response);
       });
-    } else {
-      console.log("NO ESTOY MANDANDO NADA")
     }
   };
 
@@ -93,6 +92,7 @@ function SignUp() {
           Registrarse
         </button>
       </form>
+      <Theme />
     </div>
   );
 }

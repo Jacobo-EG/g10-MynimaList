@@ -1,5 +1,5 @@
 html,  body {
-    background-color: #f8f9fa;
+    background-color: var(--secondary-color);
 }
 
 .about-container {
@@ -9,10 +9,11 @@ html,  body {
     width: 11 00px;
     padding: 80px;
     transform: translate(-50%, -50%);
-    background: #dee2e6;
+    background: var(--primary-color);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
+    color: var(--text-color);
   }
   
   .login-container .user-container {

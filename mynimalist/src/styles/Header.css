@@ -10,10 +10,15 @@
   font-size: 30px;
   padding-right: 15px;
   font-weight: bold;
+  color: var(--text-color);
 }
 
 .Header span {
   display: flex;
   position: relative;
   top: 2px;
+}
+
+.Header .logout {
+  right: -8px;
 }
