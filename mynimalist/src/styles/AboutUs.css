@@ -6,8 +6,8 @@ html,  body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 11 00px;
-    padding: 80px;
+    width: 900px;
+    padding: 40px;
     transform: translate(-50%, -50%);
     background: var(--primary-color);
     box-sizing: border-box;
@@ -36,4 +36,8 @@ html,  body {
     height: 400px;
     width: 600px;
     margin: auto;
+  }
+
+  .back {
+    cursor: pointer;
   }
