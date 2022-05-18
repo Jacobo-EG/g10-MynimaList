@@ -4,13 +4,13 @@ import '../styles/AboutUs.css';
 import aboutImage from './AboutImage.png'
 function AboutUs () {
     let navigate = useNavigate();
-    const handleClickSignUp = () => {
+    const goBack = () => {
         navigate('/');
     };
   
     return (
         <div className="about-container">
-            <h1>{"Sobre nosotros"}</h1>
+            <h1>Sobre nosotros</h1>
             <br>{}</br>
             <i>MynimaList</i> nace como una solución simple y efectiva para todos aquellos que quieren generar listas de tareas de forma minimalista y rápida.
             <br>{}</br>

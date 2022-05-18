@@ -85,11 +85,11 @@ function SignUp() {
             }
           <label>Contraseña</label>
         </div>
-        <button type="button" className="sign-in" onClick={handleClickSignIn}>
-          Iniciar sesion
-        </button>
         <button type="button" className="sign-up" onClick={handleClickSignUp}>
           Registrarse
+        </button>
+        <button type="button" className="sign-in" onClick={handleClickSignIn}>
+          Volver
         </button>
       </form>
       <Theme />
