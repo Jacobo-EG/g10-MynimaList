@@ -42,17 +42,6 @@ public class UserService implements UserDetailsService {
         return "se ha registrado correctamente";
     }
 
-    public String login(User loginUser){
-
-        Optional<User> user = userRepository.findByUsername(loginUser.getUsername());
-
-        if(user.isPresent() && bCryptPasswordEncoder.matches(loginUser.getPassword(),  user.get().getPassword()) ) {
-            return "se ha logueado correctamente";
-        }
-
-        return "error en el usuario o contraseña";
-    }
-
     public User getUserByUsername(String username){
         return userRepository.findByUsername(username).get();
     }
