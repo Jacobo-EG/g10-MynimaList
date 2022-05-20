@@ -30,6 +30,11 @@ public class UserTest {
     }
 
     @Test
+    public void nombreInicial(){ //Comprobar que el nombre inicial es el otorgado
+        assertTrue("La tarea deberia haber sido finalizada",strcmp(task.getName(),"prueba"));
+    }
+
+    @Test
     public void tareaNoRealizadaInicialmente(){ //Inicialmente una tarea no puede haber sido completada
         assertFalse("La tarea no deberia estar finalizada",task.getFinished());
     }
