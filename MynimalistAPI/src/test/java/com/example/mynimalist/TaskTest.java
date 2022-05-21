@@ -29,6 +29,17 @@ public class TaskTest {
     }
 
     @Test
+    public void nombreCambio(){ //Comprobar que el nombre es el otorgado
+        task.setName("nuevoNombre");
+        assertTrue("La tarea deberia haber cambiado de nombre",task.getName().equals("nuevoNombre"));
+    }
+
+    @Test
+    public void idNoNulo(){ //Comprobar que el id no es nulo
+        assertTrue("La tarea deberia tener un id no nulo",task.getId()!=null);
+    }
+
+    @Test
     public void tareaNoRealizadaInicialmente(){ //Inicialmente una tarea no puede haber sido completada
 
         assertFalse("La tarea no deberia haber sido finalizada",task.getFinished());
