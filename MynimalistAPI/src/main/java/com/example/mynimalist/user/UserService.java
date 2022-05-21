@@ -28,7 +28,7 @@ public class UserService implements UserDetailsService {
     }
 
     @Transactional
-    public String register(User user){
+    public User register(User user){
         boolean userExists = userRepository.findByUsername(user.getUsername()).isPresent();
         if (userExists) {
             throw new IllegalStateException("El usuario ya existe");
@@ -39,7 +39,7 @@ public class UserService implements UserDetailsService {
 
         userRepository.save(user);
 
-        return "se ha registrado correctamente";
+        return user;
     }
 
     public User getUserByUsername(String username){

@@ -1,9 +1,17 @@
 package com.example.mynimalist;
 
 import com.example.mynimalist.user.User;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import java.util.Collection;
+import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -11,11 +19,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 public class UserTest {
 
-     User user;
+    private AutoCloseable autoCloseable;
+
+    @InjectMocks
+    private User user;
 
     @BeforeEach
-    void initUser(){
-        this.user = new User("username", "email","password");
+    void setUp(){
+        autoCloseable = MockitoAnnotations.openMocks(this);
+
+        user = new User("username", "email", "password");
+    }
+
+    @AfterEach
+    void tearDown() throws Exception {
+        autoCloseable.close();
     }
 
     @Test
@@ -24,6 +42,7 @@ public class UserTest {
         assertEquals("email", this.user.getEmail());
         assertEquals("password", this.user.getPassword());
         assertEquals(null, user.getId()); // User id should be null before registration
+        assertEquals(null, user.getListas());
         assertTrue(!user.getLocked());
         assertTrue(user.getEnabled());
     }
@@ -38,15 +57,15 @@ public class UserTest {
     @Test
     void testEmailSetter(){
         assertEquals("email", this.user.getEmail());
-        user.setUsername("newEmail");
-        assertEquals("newEmail", this.user.getUsername());
+        user.setEmail("newEmail");
+        assertEquals("newEmail", this.user.getEmail());
     }
 
     @Test
     void testPasswordSetter(){
         assertEquals("password", this.user.getPassword());
-        user.setUsername("newPassword");
-        assertEquals("newPassword", this.user.getUsername());
+        user.setPassword("newPassword");
+        assertEquals("newPassword", this.user.getPassword());
     }
 
     @Test
@@ -62,6 +81,16 @@ public class UserTest {
     @Test
     void testEnabledAccount(){
         assertTrue(user.isEnabled());
+    }
+
+    @Test
+    void testIsAccountNonLocked(){
+        assertEquals(!user.getLocked(), user.isAccountNonLocked());
+    }
+
+    @Test
+    void testGetAuthorities(){
+        assertEquals(Collections.singletonList(new SimpleGrantedAuthority("USER")), user.getAuthorities());
     }
 
 }

@@ -1,17 +1,13 @@
 package com.example.mynimalist.list;
 
 import com.example.mynimalist.user.User;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
 @Getter
-@Setter
 public class List {
 
     @Id
@@ -35,4 +31,7 @@ public class List {
         this.user = user;
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
 }

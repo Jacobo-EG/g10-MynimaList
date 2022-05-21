@@ -1,6 +1,7 @@
 package com.example.mynimalist.task;
 
 import com.example.mynimalist.list.List;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

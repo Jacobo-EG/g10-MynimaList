@@ -13,7 +13,7 @@ public class RegistrationService {
     private final UserService userService;
 
     @Transactional
-    public String register(RegistrationRequest request){
+    public User register(RegistrationRequest request){
         return userService.register(new User(
                 request.getUsername(),
                 request.getEmail(),

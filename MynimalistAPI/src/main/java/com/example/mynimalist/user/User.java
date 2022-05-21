@@ -15,7 +15,6 @@ import java.util.List;
 
 
 @Getter
-@EqualsAndHashCode
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
