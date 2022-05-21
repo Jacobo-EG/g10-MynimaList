@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import axios from "axios";
 import { CheckSquare } from "react-bootstrap-icons";
 import { TaskContext } from "../context";
 import "../styles/EditTaskForm.css";
@@ -10,17 +11,26 @@ function TaskForm() {
 
   // Context
 
-  const { selectedTask, setSelectedTask } = useContext(TaskContext)
+  const { selectedTask, tokenA, setUpdate, update, checked } = useContext(TaskContext)
 
   useEffect(() => {
     if(selectedTask){
         setText(selectedTask.name)
     }
-  }, [selectedTask])
+  }, [selectedTask, checked])
 
   function handleSubmit(e) {
     e.preventDefault()
-    setSelectedTask(undefined)
+    axios.post('http://localhost:8080/task/updatename', {
+      token : tokenA,
+      id : selectedTask.id,
+      name : text
+    }).then( response => {
+        console.log(response.data)
+        setUpdate(!update)
+    }).catch( e => {
+        console.log(e.response)
+    })
   }
 
   return (
@@ -33,7 +43,7 @@ function TaskForm() {
             autoFocus
           />
           <span className="save" onClick={handleSubmit}>
-            <CheckSquare color="black" size="15"/>
+            <CheckSquare color={checked ? "white" : "black"}  size="15"/>
           </span>
       </div>
     </form>

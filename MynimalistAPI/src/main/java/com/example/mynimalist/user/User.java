@@ -15,7 +15,6 @@ import java.util.List;
 
 
 @Getter
-@Setter
 @EqualsAndHashCode
 @NoArgsConstructor
 @Entity
@@ -55,6 +54,19 @@ public class User implements UserDetails {
         SimpleGrantedAuthority authority = new SimpleGrantedAuthority("USER");
         return Collections.singletonList(authority);
     }
+
+    public void setUsername(String username){
+        this.username = username;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
 
     @Override
     public String getPassword() {

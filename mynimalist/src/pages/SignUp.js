@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/Login.css";
 import LogoWriting from "../components/LogoWriting";
 import { useNavigate } from "react-router-dom";
+import Theme from "../components/Theme";
 
 function SignUp() {
   const [mailReg, setMailReg] = useState("");
@@ -35,8 +36,6 @@ function SignUp() {
       .catch((e) => {
         console.log(e.response);
       });
-    } else {
-      console.log("NO ESTOY MANDANDO NADA")
     }
   };
 
@@ -86,13 +85,14 @@ function SignUp() {
             }
           <label>Contraseña</label>
         </div>
-        <button type="button" className="sign-in" onClick={handleClickSignIn}>
-          Iniciar sesion
-        </button>
         <button type="button" className="sign-up" onClick={handleClickSignUp}>
           Registrarse
         </button>
+        <button type="button" className="sign-in" onClick={handleClickSignIn}>
+          Volver
+        </button>
       </form>
+      <Theme />
     </div>
   );
 }

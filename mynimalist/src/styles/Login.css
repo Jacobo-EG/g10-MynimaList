@@ -1,5 +1,5 @@
 html,  body {
-    background-color: #f8f9fa;
+    background-color: var(--secondary-color);
 }
 
 .login-container {
@@ -9,7 +9,7 @@ html,  body {
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: #dee2e6;
+  background: var(--primary-color);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
@@ -29,7 +29,7 @@ html,  body {
   border-bottom: 1px solid #fff;
   outline: none;
   background: transparent;
-  color: black;
+  color: var(--text-color-login);
 }
 .login-container .user-container label {
   position: absolute;
@@ -37,7 +37,6 @@ html,  body {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -46,7 +45,7 @@ html,  body {
 .login-container .user-container input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #495057;
+  color: var(--text-color-login);
   font-size: 12px;
 }
 
@@ -54,7 +53,7 @@ html,  body {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  color: #495057;
+  color: var(--text-color-login);
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -68,14 +67,14 @@ html,  body {
 }
 
 .sign-in:hover {
-  color: black;
+  color: var(--text-color-hover);
 }
 
 .sign-up {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #495057;
+    color: var(--text-color-login);
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -89,7 +88,7 @@ html,  body {
 }
 
 .sign-up:hover {
-  color: black;
+  color: var(--text-color-hover);
 }
 
 .about-us {
@@ -97,8 +96,8 @@ html,  body {
   display: flex;
   right: 0px;
   padding: 10px 20px;
-  font-family: 'Times New Roman', Times, serif;
-  color: blue;
+  font-family: 'Times New Roman', serif;
+  color: var(--text-color-login);
   font-size: 12px;
   text-decoration: none;
   text-transform: full-width;
@@ -110,13 +109,20 @@ html,  body {
   border: none;
   cursor: pointer;
 }
-.about-us:hover {
+
+.about-us:hover{
+  color: var(--text-color-hover);
   text-decoration: underline;
+}
+
+.login-container .theme {
+  padding-top: 20px;
+  cursor: pointer;
 }
 
 .error {
   position: absolute;
   top: 45px;
   font-size: 0.7rem;
-  color: red;
+  color: var(--text-color-error);
 }

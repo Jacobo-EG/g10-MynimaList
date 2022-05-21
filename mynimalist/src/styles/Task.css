@@ -16,6 +16,7 @@
     flex: 1;
     margin: 0 10px;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 .Task .task-container .text span {
@@ -27,7 +28,7 @@
     height: 1px;
     background: #CCCCCC;
     position: absolute;
-    top: 25%;
+    top: 50%;
     width: 0;
     transition: width 250ms ease-in-out;
 }

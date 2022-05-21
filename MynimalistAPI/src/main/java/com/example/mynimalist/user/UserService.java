@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
@@ -26,6 +27,7 @@ public class UserService implements UserDetailsService {
                         String.format(USER_NOT_FOUND_MSG, username)));
     }
 
+    @Transactional
     public String register(User user){
         boolean userExists = userRepository.findByUsername(user.getUsername()).isPresent();
         if (userExists) {
@@ -40,18 +42,7 @@ public class UserService implements UserDetailsService {
         return "se ha registrado correctamente";
     }
 
-    public String login(User loginUser){
-
-        Optional<User> user = userRepository.findByUsername(loginUser.getUsername());
-
-        if(user.isPresent() && bCryptPasswordEncoder.matches(loginUser.getPassword(),  user.get().getPassword()) ) {
-            return "se ha logueado correctamente";
-        }
-
-        return "error en el usuario o contraseña";
-    }
-
-    public User getUserByUsername(String username){ //TODO: controlar que exista aunque solo deberia ser llamado a partir de metodos que usen token
+    public User getUserByUsername(String username){
         return userRepository.findByUsername(username).get();
     }
 }

@@ -13,4 +13,5 @@ public class ItemRequest {
     private  final String token;
     private final String name;
     private final Long id;
+    private final Boolean finished; // Only for task
 }

@@ -4,6 +4,9 @@ const TaskContext = createContext()
 
 function TaskContextProvider({ children }) {
 
+    // Estado usado para el modo oscuro
+    const [checked, setChecked] = useState(localStorage.getItem("theme") === "dark" ? true : false);
+
     // Estado usado para el token de acceso
     const [tokenA, setTokenA] = useState("")
 
@@ -33,7 +36,9 @@ function TaskContextProvider({ children }) {
                 update,
                 setUpdate,
                 tokenA,
-                setTokenA
+                setTokenA,
+                checked,
+                setChecked
             }
         }>
             {children}
