@@ -36,8 +36,9 @@ public class ListController {
         String username = decodedJWT.getSubject();
 
         User user = userService.getUserByUsername(username);
+        listService.saveList(new List(list_name, user));
 
-        return new ResponseEntity(listService.saveList(new List(list_name, user)), HttpStatus.OK);
+        return new ResponseEntity("Lista guardada correctamente", HttpStatus.OK);
     }
 
     @PostMapping (path = "/get")
@@ -84,7 +85,7 @@ public class ListController {
         Long listId = request.getId();
         String newName = request.getName();
 
-        return new ResponseEntity<>(listService.updateNameList(listId, newName), HttpStatus.OK);
+        return new ResponseEntity<>("Nombre de la lista modificado correctamente", HttpStatus.OK);
     }
 
 }

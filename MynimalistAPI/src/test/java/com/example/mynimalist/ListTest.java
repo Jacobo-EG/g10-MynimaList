@@ -9,13 +9,13 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 @SpringBootTest
 public class ListTest {
 
+    @InjectMocks
     private List list;
-
-    @Mock
     private User mockUser;
 
     @BeforeEach
@@ -27,7 +27,7 @@ public class ListTest {
     void gettersTest(){
         assertEquals("listName", list.getName());
         assertEquals(mockUser, list.getUser());
-        assertEquals(null, list.getId()); // List id should be null before adding to database
+        assertNull(list.getId()); // List id should be null before adding to database
     }
 
     @Test

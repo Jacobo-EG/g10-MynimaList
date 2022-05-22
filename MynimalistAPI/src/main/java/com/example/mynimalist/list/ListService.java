@@ -20,10 +20,8 @@ public class ListService {
     private TaskService taskService;
 
     @Transactional
-    public String saveList(List list) {
-        listRepository.save(list);
-
-        return "Lista guardada correctamente";
+    public List saveList(List list) {
+        return listRepository.save(list);
     }
 
     @Transactional(readOnly = true)
@@ -38,18 +36,16 @@ public class ListService {
         return "Lista borrada correctamente";
     }
 
-
     @Transactional(readOnly = true)
     public List getById(Long id){
         return listRepository.getById(id);
     }
 
     @Transactional
-    public String updateNameList(Long id, String newName) {
+    public List updateNameList(Long id, String newName) {
         List listToUpdate = listRepository.getById(id);
         listToUpdate.setName(newName);
-        listRepository.save(listToUpdate);
-        return "Nombre de la lista modificado correctamente";
+        return listRepository.save(listToUpdate);
     }
 
 }
