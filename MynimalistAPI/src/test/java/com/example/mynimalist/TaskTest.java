@@ -35,8 +35,8 @@ public class TaskTest {
     }
 
     @Test
-    public void idNoNulo(){ //Comprobar que el id no es nulo
-        assertTrue("La tarea deberia tener un id no nulo",task.getId()!=null);
+    public void idNulo(){ //Comprobar que el id es nulo
+        assertTrue("La tarea deberia tener un id no nulo",task.getId()==null);
     }
 
     @Test
