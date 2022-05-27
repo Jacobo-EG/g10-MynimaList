@@ -13,12 +13,36 @@
   color: var(--text-color);
 }
 
+.Header .header-buttons {
+  display: flex;
+  align-items: center;
+}
+
 .Header span {
   display: flex;
   position: relative;
   top: 2px;
+  cursor: pointer;
 }
 
 .Header .logout {
   right: -8px;
 }
+
+.Header .menu {
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+
+@media screen and (max-width: 1020px) {
+  .Header{ 
+    flex-direction: column;
+  } 
+}
+
+@media screen and (max-width: 480px) {
+  .Header{ 
+    flex-direction: row;
+  } 
+}
+

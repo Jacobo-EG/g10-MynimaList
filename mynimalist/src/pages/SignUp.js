@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
 import LogoWriting from "../components/LogoWriting";
@@ -36,7 +36,7 @@ function SignUp() {
       .catch((e) => {
         console.log(e.response);
       });
-    }
+    } 
   };
 
   return (

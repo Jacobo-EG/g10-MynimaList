@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import axios from 'axios';
 import qs from 'qs';
 import '../styles/Login.css';
@@ -26,70 +26,80 @@ function Login() {
     {
       headers: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then( response => {
+      localStorage.setItem("token", response.data.access_token)
       setTokenA(response.data.access_token)  
       navigate('/main')
     }).catch( e => {
-        if(e.response.status === 401) {
-          alert("Usuario o contraseña incorrectos")
-        }
+      if(e.response.status === 401) {
+        alert("Usuario o contraseña incorrectos")
+      }
     })
-
+    
   };
+
   const handleClickAboutUs = () => {
     navigate('/sobre-nosotros')
     }
 
-  return (
-    <div className="login-container">
-      <LogoWriting />
-      <form>
-        <div className="user-container">
-          <input
-            type="text"
-            value={username}
-            onChange = { (e) => {
-              setUsername(e.target.value);
-            }}
-          />
-          <label>Usuario</label>
-        </div>
-        <div className="user-container">
-          <input
-            type="password"
-            value={password}
-            onChange = { (e) => {
-              setPassword(e.target.value);
-            }}
-          />
-          <label>Contraseña</label>
-        </div>
+  useEffect( () => {
+    if(localStorage.getItem("token") != "no") {
+      setTokenA(localStorage.getItem("token"))
+      navigate('/main')
+    }
+  })
+  
+    return (
+      <div className="login-container">
+        <LogoWriting />
+        <form>
+          <div className="user-container">
+            <input
+              type="text"
+              value={username}
+              onChange = { (e) => {
+                setUsername(e.target.value);
+              }}
+            />
+            <label>Usuario</label>
+          </div>
+          <div className="user-container">
+            <input
+              type="password"
+              value={password}
+              onChange = { (e) => {
+                setPassword(e.target.value);
+              }}
+            />
+            <label>Contraseña</label>
+          </div>
+          <button
+            type="button"
+            className="sign-in"
+            onClick={handleClickSignIn}
+          >
+            Iniciar sesion
+          </button>
+          <button
+            type="button"
+            className="sign-up"
+            onClick={handleClickSignUp}
+          >
+            Registrarse
+          </button>
+        </form>
         <button
-          type="button"
-          className="sign-in"
-          onClick={handleClickSignIn}
-        >
-          Iniciar sesion
-        </button>
-        <button
-          type="button"
-          className="sign-up"
-          onClick={handleClickSignUp}
-        >
-          Registrarse
-        </button>
-      </form>
-      <button
-          type="button"
-          className="about-us"
-          onClick={handleClickAboutUs}
-        >
-          Sobre nosotros
-        </button>
-        <span className="theme">
-          <Theme />
-        </span>
-    </div>
-  );
+            type="button"
+            className="about-us"
+            onClick={handleClickAboutUs}
+          >
+            Sobre nosotros
+          </button>
+          <span className="theme">
+            <Theme />
+          </span>
+      </div>
+    );
+  
 }
 
 export default Login;

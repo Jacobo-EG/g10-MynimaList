@@ -22,7 +22,6 @@ function Task({ task }) {
       })
       .then((response) => {
         setUpdate(!update);
-        console.log(response.data);
       })
       .catch((e) => {
         console.log(e.response);
@@ -36,7 +35,6 @@ function Task({ task }) {
       id : task.id,
       finished : !task.finished
     }).then( response => {
-        console.log(response.data)
         setUpdate(!update)
     }).catch( e => {
         console.log(e.response)

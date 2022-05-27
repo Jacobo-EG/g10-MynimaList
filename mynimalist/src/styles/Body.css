@@ -6,3 +6,11 @@
   background-size: cover;
   position: relative;
 }
+
+@media screen and (max-width: 480px) {
+  .Body {
+    display: flex;
+    flex-direction: column;
+  } 
+}
+

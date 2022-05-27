@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "../styles/List.css";
 import ListButtons from "./ListButtons";
-import { TaskContext } from "../context"
+import { TaskContext } from "../context";
 
 function List({ list }) {
   // STATE
@@ -9,6 +9,7 @@ function List({ list }) {
 
   // CONTEXT
   const { setSelectedList } = useContext(TaskContext)
+
 
   return (
     <div

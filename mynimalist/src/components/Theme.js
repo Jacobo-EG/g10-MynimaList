@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { Moon } from "react-bootstrap-icons";
 import { TaskContext } from "../context";
 

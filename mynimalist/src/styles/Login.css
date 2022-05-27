@@ -1,12 +1,13 @@
 html,  body {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 .login-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 35%;
+  height: auto;
   padding: 40px;
   transform: translate(-50%, -50%);
   background: var(--primary-color);
@@ -23,10 +24,9 @@ html,  body {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--text-color-login);
   outline: none;
   background: transparent;
   color: var(--text-color-login);
@@ -38,7 +38,6 @@ html,  body {
   padding: 10px 0;
   font-size: 16px;
   pointer-events: none;
-  transition: 0.5s;
 }
 
 .login-container .user-container input:focus ~ label,
@@ -54,11 +53,10 @@ html,  body {
   display: inline-block;
   padding: 10px 20px;
   color: var(--text-color-login);
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
   margin-top: 10px;
   letter-spacing: 4px;
   background: none!important;
@@ -75,11 +73,10 @@ html,  body {
     display: inline-block;
     padding: 10px 20px;
     color: var(--text-color-login);
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
-    transition: .5s;
     margin-top: 10px;
     letter-spacing: 4px;
     background: none!important;
@@ -96,13 +93,11 @@ html,  body {
   display: flex;
   right: 0px;
   padding: 10px 20px;
-  font-family: 'Times New Roman', serif;
   color: var(--text-color-login);
   font-size: 12px;
   text-decoration: none;
   text-transform: full-width;
   overflow: hidden;
-  transition: .5s;
   margin-top: 10px;
   letter-spacing: 2px;
   background: none!important;
@@ -112,7 +107,6 @@ html,  body {
 
 .about-us:hover{
   color: var(--text-color-hover);
-  text-decoration: underline;
 }
 
 .login-container .theme {
@@ -120,9 +114,20 @@ html,  body {
   cursor: pointer;
 }
 
-.error {
-  position: absolute;
-  top: 45px;
-  font-size: 0.7rem;
-  color: var(--text-color-error);
+@media screen and (max-width: 960px) {
+  .login-container {
+    width: 50%;
+  } 
+}
+
+@media screen and (max-width: 650px) {
+  .login-container {
+    width: 70%;
+  } 
+}
+
+@media screen and (max-width: 480px) {
+  .login-container {
+    width: 80%;
+  } 
 }

@@ -16,11 +16,13 @@ function AboutUs () {
   
     return (
         <div className="about-container">
-            <span className="back" onClick={() => goBack()}>
-                <ArrowLeftSquareFill color={checked ? "white" : "black"}  />
-            </span>
-            <div>
-                <h1>Sobre nosotros</h1>
+            <div className="text">
+                <div className="title">
+                    <h1>Sobre nosotros</h1>
+                    <span className="back" onClick={() => goBack()}>
+                        <ArrowLeftSquareFill size="25" color={checked ? "white" : "black"}  />
+                    </span>
+                </div>
                 <br>{}</br>
                 <i>MynimaList</i> nace como una solución simple y efectiva para todos aquellos que quieren generar listas de tareas de forma minimalista y rápida.
                 <br>{}</br>
