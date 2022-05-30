@@ -44,24 +44,13 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
         User user = (User) authentication.getPrincipal();
         Algorithm algorithm = Algorithm.HMAC256(secret.getBytes());
-        Date expiration = new Date(System.currentTimeMillis() + 60 * 60 * 1000); // El token expira en una hora
         String access_token = JWT.create()
                 .withSubject(user.getUsername())
-                .withExpiresAt(expiration)
                 .withIssuer(request.getRequestURL().toString())
                 .sign(algorithm);
 
-       /* String refresh_token = JWT.create()
-                .withSubject(user.getUsername())
-                .withExpiresAt(expiration)
-                .withIssuer(request.getRequestURL().toString())
-                .sign(algorithm);*/
-
-        //response.setHeader("access_token", token);
-
         Map<String, String> tokens = new HashMap<>();
         tokens.put("access_token", access_token);
-        //tokens.put("refresh_token", refresh_token);
         response.setContentType(APPLICATION_JSON_VALUE);
         new ObjectMapper().writeValue(response.getOutputStream(), tokens);
     }
