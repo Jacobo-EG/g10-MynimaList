@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import static com.example.mynimalist.common.JwtUtils.getDecodedJWT;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://mynimalist.herokuapp.com")
 @RestController
 @RequestMapping(path = "/list")
 public class ListController {
@@ -85,6 +85,7 @@ public class ListController {
         Long listId = request.getId();
         String newName = request.getName();
 
+        listService.updateNameList(listId, newName);
         return new ResponseEntity<>("Nombre de la lista modificado correctamente", HttpStatus.OK);
     }
 

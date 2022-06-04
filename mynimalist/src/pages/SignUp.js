@@ -25,7 +25,7 @@ function SignUp() {
 
     if(emailRegex.test(mailReg) && usernameReg.length >= 4 && passwordReg.length >= 6) {
       axios
-      .post("http://localhost:8080/registration", {
+      .post("http://mynimalistbackend.herokuapp.com/registration", {
         username: usernameReg,
         email: mailReg,
         password: passwordReg,

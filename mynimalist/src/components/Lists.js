@@ -12,7 +12,7 @@ function Lists() {
 
 useEffect( () => {
     
-    axios.post('http://localhost:8080/list/get', {
+    axios.post('http://mynimalistbackend.herokuapp.com/list/get', {
       token : tokenA
   }).then( response => {
       setLists(response.data)

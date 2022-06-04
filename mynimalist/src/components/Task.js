@@ -16,7 +16,7 @@ function Task({ task }) {
 
   const handleDelete = (task) => {
     axios
-      .post("http://localhost:8080/task/delete", {
+      .post("http://mynimalistbackend.herokuapp.com/task/delete", {
         token: tokenA,
         id: task.id,
       })
@@ -29,7 +29,7 @@ function Task({ task }) {
   };
 
   const handleCheck = (task) => {
-    axios.post('http://localhost:8080/task/updatestatus', {
+    axios.post('http://mynimalistbackend.herokuapp.com/task/updatestatus', {
       token : tokenA,
       name : task.text,
       id : task.id,

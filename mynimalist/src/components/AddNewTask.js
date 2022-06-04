@@ -16,7 +16,7 @@ function AddNewTask() {
   function handleSubmit(e) {
       e.preventDefault()
 
-      axios.post('http://localhost:8080/task/add', {
+      axios.post('http://mynimalistbackend.herokuapp.com/task/add', {
         token : tokenA,
         name : text,
         id : selectedList

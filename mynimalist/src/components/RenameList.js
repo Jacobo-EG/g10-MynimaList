@@ -14,12 +14,11 @@ function RenameList({ list, setShowModal }) {
     function handleSubmit(e) {
         e.preventDefault()
 
-        axios.post('http://localhost:8080/list/updatename', {
+        axios.post('http://mynimalistbackend.herokuapp.com/list/updatename', {
             token : tokenA,
             id : selectedList,
             name : newListName
           }).then( response => {
-              console.log(response.data)
               setNewListName("")
               setShowModal(false)
               setUpdate(!update)

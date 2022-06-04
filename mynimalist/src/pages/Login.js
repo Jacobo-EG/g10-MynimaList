@@ -22,7 +22,7 @@ function Login() {
   const handleClickSignIn = () => {
 
     let body = { username: username, password: password }
-    axios.post('http://localhost:8080/login', qs.stringify(body), 
+    axios.post('http://mynimalistbackend.herokuapp.com/login', qs.stringify(body), 
     {
       headers: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then( response => {

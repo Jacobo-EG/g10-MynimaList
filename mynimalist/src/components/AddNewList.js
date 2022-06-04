@@ -15,7 +15,7 @@ function AddNewList() {
   function handleSubmit (e) {
     e.preventDefault()
 
-    axios.post('http://localhost:8080/list/add', {
+    axios.post('http://mynimalistbackend.herokuapp.com/list/add', {
       token : tokenA,
       name : listName
     }).then( response => {

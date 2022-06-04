@@ -13,7 +13,7 @@ function Tasks(){
 
     useEffect( () => {
 
-        axios.post('http://localhost:8080/task/get', {
+        axios.post('http://mynimalistbackend.herokuapp.com/task/get', {
             token : tokenA,
             id : selectedList
         }).then( response => {

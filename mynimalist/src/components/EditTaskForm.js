@@ -21,7 +21,7 @@ function TaskForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    axios.post('http://localhost:8080/task/updatename', {
+    axios.post('http://mynimalistbackend.herokuapp.com/task/updatename', {
       token : tokenA,
       id : selectedTask.id,
       name : text

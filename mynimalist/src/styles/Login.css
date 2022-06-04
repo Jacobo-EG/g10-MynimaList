@@ -114,6 +114,13 @@ html,  body {
   cursor: pointer;
 }
 
+.error {
+  position: absolute;
+  top: 45px;
+  font-size: 0.7rem;
+  color: red;
+} 
+
 @media screen and (max-width: 960px) {
   .login-container {
     width: 50%;
@@ -130,4 +137,7 @@ html,  body {
   .login-container {
     width: 80%;
   } 
+  .error {
+    font-size: 0.6rem;
+  }
 }

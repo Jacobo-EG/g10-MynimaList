@@ -10,7 +10,7 @@ function DeleteList({ list }) {
   function handleSubmit(e) {
     e.preventDefault()
 
-    axios.post('http://localhost:8080/list/delete', {
+    axios.post('http://mynimalistbackend.herokuapp.com/list/delete', {
       token : tokenA,
       id : list.id
     }).then( response => {
