@@ -1,0 +1,16 @@
+.Body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+@media screen and (max-width: 480px) {
+  .Body {
+    display: flex;
+    flex-direction: column;
+  } 
+}
+

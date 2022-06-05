@@ -1,0 +1,143 @@
+html,  body {
+  background-color: var(--secondary-color);
+}
+
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35%;
+  height: auto;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: var(--primary-color);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-container .user-container {
+  position: relative;
+}
+
+.login-container .user-container input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid var(--text-color-login);
+  outline: none;
+  background: transparent;
+  color: var(--text-color-login);
+}
+.login-container .user-container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.login-container .user-container input:focus ~ label,
+.login-container .user-container input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: var(--text-color-login);
+  font-size: 12px;
+}
+
+.sign-in {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--text-color-login);
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  margin-top: 10px;
+  letter-spacing: 4px;
+  background: none!important;
+  border: none;
+  cursor: pointer;
+}
+
+.sign-in:hover {
+  color: var(--text-color-hover);
+}
+
+.sign-up {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--text-color-login);
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin-top: 10px;
+    letter-spacing: 4px;
+    background: none!important;
+    border: none;
+    cursor: pointer;
+}
+
+.sign-up:hover {
+  color: var(--text-color-hover);
+}
+
+.about-us {
+  position: absolute;
+  display: flex;
+  right: 0px;
+  padding: 10px 20px;
+  color: var(--text-color-login);
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: full-width;
+  overflow: hidden;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  background: none!important;
+  border: none;
+  cursor: pointer;
+}
+
+.about-us:hover{
+  color: var(--text-color-hover);
+}
+
+.login-container .theme {
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+.error {
+  position: absolute;
+  top: 45px;
+  font-size: 0.7rem;
+  color: red;
+} 
+
+@media screen and (max-width: 960px) {
+  .login-container {
+    width: 50%;
+  } 
+}
+
+@media screen and (max-width: 650px) {
+  .login-container {
+    width: 70%;
+  } 
+}
+
+@media screen and (max-width: 480px) {
+  .login-container {
+    width: 80%;
+  } 
+  .error {
+    font-size: 0.6rem;
+  }
+}

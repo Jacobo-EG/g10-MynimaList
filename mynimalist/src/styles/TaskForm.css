@@ -1,0 +1,39 @@
+.TaskForm{
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    position: relative;
+    padding-bottom: 40px;
+}
+.TaskForm input{
+    width: 100%;
+    height: 30px;
+    margin: 15px 0;
+    border: none;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #7f7f7f;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+.TaskForm input:focus{
+    outline: none;
+}
+.TaskForm h3{
+    font-size: 1.5rem;
+}
+.confirm{
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    border: none;
+    color: var(--button-text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: filter 150ms ease-in-out;
+    right: 0;
+    background-color: var(--button-color);
+}
+.confirm:hover{
+    filter: brightness(1.1);
+}

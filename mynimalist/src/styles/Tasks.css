@@ -1,0 +1,42 @@
+/* Tasks */
+.Tasks {
+    width: 70%;
+    height: 90%;
+    background-color : var(--secondary-color);
+  
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+  
+    border-radius: 4px;
+    opacity: 0.9;
+  
+    padding: 0 0.Srem 0.Srem 0.Srem;
+    color: var(--text-color);
+  }
+
+  .Tasks .selected-list {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--text-color);
+  }
+  
+  .Tasks .tasks {
+    overflow-y: auto;
+  }
+
+
+@media screen and (max-width: 480px) {
+  .Tasks {
+    bottom: 10px;
+    left: 60px;
+  } 
+
+  .Tasks .selected-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

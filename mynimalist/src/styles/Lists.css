@@ -1,0 +1,42 @@
+.Lists {
+  padding: 1rem;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.title p {
+  margin-left: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-color);
+}
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.buttons span {
+  border-radius: 20%;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons span:hover {
+  background-color: var(--span-hover);
+  transition: all 150ms ease-in-out;
+}
+
+.items {
+  padding: 0.5rem;
+}
