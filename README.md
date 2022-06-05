@@ -69,10 +69,12 @@ Para el front-end:
 
 Para el back-end: 
 
-* [Java 1.7](https://www.oracle.com/es/java/technologies/javase/javase7-archive-downloads.html)
+* [Java 17](https://www.oracle.com/es/java/technologies/javase/javase7-archive-downloads.html](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * [Spring Boot](https://spring.io/projects/spring-boot) 
 * [Lombok](https://projectlombok.org/)
-* [Web Security](https://www.websecurity.es/)
+* [Spring Security](https://spring.io/projects/spring-security)
+* [Aut0 - JWT](https://auth0.com/docs/secure/tokens/json-web-tokens)
+* [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
 
 
 ## Autores ✒️
