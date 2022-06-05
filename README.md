@@ -69,7 +69,7 @@ Para el front-end:
 
 Para el back-end: 
 
-* [Java 17](https://www.oracle.com/es/java/technologies/javase/javase7-archive-downloads.html](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * [Spring Boot](https://spring.io/projects/spring-boot) 
 * [Lombok](https://projectlombok.org/)
 * [Spring Security](https://spring.io/projects/spring-security)
