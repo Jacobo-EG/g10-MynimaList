@@ -24,13 +24,13 @@ function AboutUs () {
                     </span>
                 </div>
                 <br>{}</br>
-                <i>MynimaList</i> nace como una solución simple y efectiva para todos aquellos que quieren generar listas de tareas de forma minimalista y rápida.
+                <i>MynimaList</i> nace como una solución simple y efectiva para todos aquellos que quieren generar listas de tareas de forma sencilla y rápida.
                 <br>{}</br>
                 <br>{}</br>
-                <i>MynimaList</i> ha sido desarrollada por un grupo de alumnos del Doble Grado de Ingienería Informática + Matemáticas de la Universidad de Málaga, como 
-                proyecto final para la asignatura de <i>Introducción a la Ingienería del Software</i>, donde hemos aprendido tanto metodologías de modelado de software como 
-                Scrum, a documentar el proyecto de una forma más completa y parecida a lo que se hace en la realidad y además, hemos tenido un primer contacto con tecnologías 
-                como HTML, CSS, React, Java orientado al back-end, Git...
+                Ha sido desarrollada por un grupo de alumnos del Doble Grado de Ingienería Informática + Matemáticas de la Universidad de Málaga, como 
+                proyecto final para la asignatura de <i>Introducción a la Ingienería del Software</i>, donde hemos aprendido metodologías de desarrollo de software como 
+                Scrum, también hemos aprendido a documentar el proyecto de una forma más completa y parecida a lo que se hace en la realidad y además, hemos tenido un primer contacto con tecnologías 
+                como HTML, CSS, React, Java para el backend, Git...
             </div>
             <div className="col-2">
                 <img src={aboutImage} alt="Working People"></img>          
