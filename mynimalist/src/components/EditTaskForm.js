@@ -13,12 +13,14 @@ function TaskForm() {
 
   const { selectedTask, tokenA, setUpdate, update, checked } = useContext(TaskContext)
 
+  // Cambio el texto segun la lista seleccionada
   useEffect(() => {
     if(selectedTask){
         setText(selectedTask.name)
     }
   }, [selectedTask, checked])
 
+  // Manejo el actualizar nombre de lista con la peticion al backend
   function handleSubmit(e) {
     e.preventDefault()
     axios.post('http://mynimalistbackend.herokuapp.com/task/updatename', {
@@ -33,7 +35,7 @@ function TaskForm() {
     })
   }
 
-  return (
+  return ( // Devuelvo el componente de editar tarea
     <form className="EditTaskForm" onSubmit={handleSubmit}>
       <div className="edit-container">
           <input

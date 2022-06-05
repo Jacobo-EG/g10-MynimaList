@@ -9,7 +9,7 @@ function Lists() {
   
   const { lists, setSelectedList, setLists, update, tokenA } = useContext(TaskContext)
 
-
+// Cada vez que se renderiza este componente pido al backend todas las listas
 useEffect( () => {
     
     axios.post('http://mynimalistbackend.herokuapp.com/list/get', {
@@ -22,7 +22,7 @@ useEffect( () => {
 
 }, [update])
 
-  return (
+  return ( // Devuelvo todos las listas
     <div className="Lists">
       <div className="header">
         <div className="title" onClick={() => setSelectedList(-1)}>

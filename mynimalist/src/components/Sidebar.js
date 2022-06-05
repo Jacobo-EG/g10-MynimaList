@@ -5,6 +5,7 @@ import { TaskContext } from "../context";
 
 function Sidebar({ children }) {
 
+  // State necesario para la barra en versión móvil
   const { isOpen, setIsOpen } = useContext(TaskContext);
 
   const [width, setWidth] = useState(0);
@@ -18,6 +19,7 @@ function Sidebar({ children }) {
     window.addEventListener("resize", updateWidth);
   }, [width]);
 
+  // Hago un renderizado condicion en función de si estoy en móvil o no
   if (width > 480) {
     return <div className="Sidebar">{children}</div>;
   } else {

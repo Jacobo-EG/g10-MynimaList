@@ -12,6 +12,7 @@ function AddNewList() {
   // Context
   const { update, setUpdate, tokenA, checked } = useContext(TaskContext)
 
+  // Mando la peticion al backend de añadir lista
   function handleSubmit (e) {
     e.preventDefault()
 
@@ -27,7 +28,7 @@ function AddNewList() {
     })
   }
 
-  useEffect( () => {
+  useEffect( () => { // Re-renderizo el componente cada vez que se cambia el tema
     
   }, [checked])
 

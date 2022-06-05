@@ -8,6 +8,7 @@ import Tasks from "../components/Tasks";
 
 function Main() {
 
+  // States necesarios para ver el dispositivo desde el que se accede
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
@@ -19,7 +20,8 @@ function Main() {
     window.addEventListener("resize", updateWidth);
   }, [width]);
 
-  if (width > 480) {
+  // Hago un renderizado condicional para ver si estoy en un movil o no
+  if (width > 480) { 
     return (
       <div className="Main">
         <Sidebar>

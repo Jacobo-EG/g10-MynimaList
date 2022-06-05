@@ -19,6 +19,7 @@ function Header() {
     window.addEventListener("resize", updateWidth);
   }, [width, checked]);
 
+  // Manejo el cerrar sesion
   let navigate = useNavigate();
   const handleClickLogOut = () => {
     localStorage.setItem("token", "no");
@@ -26,6 +27,7 @@ function Header() {
     navigate("/");
   };
 
+  // Hago en renderizado condicional en funcion de si estoy en un movil o no
   if (width > 480) {
     return (
       <div className="Header">

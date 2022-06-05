@@ -7,6 +7,7 @@ import Modal from "./Modal";
 
 function ListButtons({list}) {
 
+  // Manejo los botones de borrar y editar lista que aparecen al poner el raton encima de cada lista
   const [checked, setChecked] = useState(localStorage.getItem("theme") === "dark" ? true : false);
 
   const [showModalEdit, setShowModalEdit] = useState(false)

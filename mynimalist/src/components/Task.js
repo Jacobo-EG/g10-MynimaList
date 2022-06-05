@@ -6,14 +6,15 @@ import "../styles/Task.css";
 import EditTaskForm from "./EditTaskForm";
 
 function Task({ task }) {
-  //STATE
+  // States necesarios
   const [hover, setHover] = useState(false);
   const [text, setText] = useState("");
 
-  //CONTEXT
+  // Traigo del contexto todo lo que necesito
   const { selectedTask, setSelectedTask, tokenA, update, setUpdate } =
     useContext(TaskContext);
 
+  // Manejo el borrar tarea, cuando la llamo hago la petición al backend para que la borre y actualizo todos los componentes necesarios 
   const handleDelete = (task) => {
     axios
       .post("http://mynimalistbackend.herokuapp.com/task/delete", {
@@ -28,6 +29,7 @@ function Task({ task }) {
       });
   };
 
+  // Manejo el completar tarea, hago la petición al backend y actualizo todos los componentes necesarios
   const handleCheck = (task) => {
     axios.post('http://mynimalistbackend.herokuapp.com/task/updatestatus', {
       token : tokenA,
@@ -41,13 +43,14 @@ function Task({ task }) {
     })
   }; 
 
+  // Manejo el editar tarea
   useEffect(() => {
     if (selectedTask) {
       setText(selectedTask.text);
     }
   }, [selectedTask]);
 
-  return (
+  return ( // Devuelvo todos los elementos que componen una tarea, junto con sus botones
     <div className="Task">
       <div
         className="task-container"

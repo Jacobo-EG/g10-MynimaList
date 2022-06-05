@@ -2,7 +2,7 @@ import React from 'react'
 import "../styles/ListForm.css";
 
 function ListForm({handleSubmit, heading, value, setValue, confirmText, deleteButton = false}){
-
+    // Uso este componente tanto para añadir nueva lista como para editar nombre de lista
     return (
         <form className='ListForm' onSubmit={handleSubmit}>
             <h3>{heading}</h3>

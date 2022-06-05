@@ -6,7 +6,7 @@ import { ArrowLeftSquareFill } from "react-bootstrap-icons";
 
 function AboutUs () {
 
-
+    // State necesario para el modo oscuro
   const [checked, setChecked] = useState(localStorage.getItem("theme") === "dark" ? true : false);
 
     let navigate = useNavigate();

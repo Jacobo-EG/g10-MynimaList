@@ -7,6 +7,7 @@ function DeleteList({ list }) {
 
   const { update, setUpdate, tokenA, setSelectedList } = useContext(TaskContext)
 
+  // Mando la peticion al backend de borrar la lista
   function handleSubmit(e) {
     e.preventDefault()
 
@@ -21,7 +22,7 @@ function DeleteList({ list }) {
     })
   }
 
-  return (
+  return ( // Renderizo la confirmacion de borrar lista
     <div className="delete">
       <ListForm
         handleSubmit={handleSubmit}

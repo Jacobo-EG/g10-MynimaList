@@ -9,16 +9,20 @@ import { TaskContext } from '../context';
 
 function Login() {
 
+  // Utilizo el context para guardar el token en el contexto 
   const { setTokenA } = useContext(TaskContext)
 
+  // States necesarios para iniciar sesion
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  // Controlo el boton de registrarse
   let navigate = useNavigate();
   const handleClickSignUp = () => {
     navigate('/registro');
   };
 
+  // Funcion para manejar el inicio de seision y enviar la peticion al backend
   const handleClickSignIn = () => {
 
     let body = { username: username, password: password }
@@ -37,10 +41,12 @@ function Login() {
     
   };
 
+  // Funcion para llevarnos al about us
   const handleClickAboutUs = () => {
     navigate('/sobre-nosotros')
     }
 
+  // Con esto controlo que si ya tengo un token guardado no tenga que iniciar sesión de nuevo
   useEffect( () => {
     if(localStorage.getItem("token") != "no") {
       setTokenA(localStorage.getItem("token"))
@@ -48,7 +54,7 @@ function Login() {
     }
   })
   
-    return (
+    return ( // Devuelvo el logo, el formulario de inicio de sesión y los botones
       <div className="login-container">
         <LogoWriting />
         <form>

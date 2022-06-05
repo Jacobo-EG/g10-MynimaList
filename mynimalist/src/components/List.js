@@ -11,7 +11,7 @@ function List({ list }) {
   const { setSelectedList } = useContext(TaskContext)
 
 
-  return (
+  return ( // Devuelvo todos los elementos que componen una lista junto a sus botones
     <div
       className="List"
       onMouseEnter={() => setHover(true)}
@@ -19,7 +19,7 @@ function List({ list }) {
     >
       <div className="name" onClick={() => setSelectedList(list.id)}>{list.name}</div>
       <div className="buttons">
-        {hover && 
+        {hover && // Hago un renderizado condicional en funcion de si el raton esta encima de lista o no 
           <ListButtons list={list}/>
         }
       </div>

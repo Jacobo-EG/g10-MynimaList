@@ -13,6 +13,7 @@ function AddNewTask() {
   const [showModal, setShowModal] = useState(false);
   const [text, setText] = useState("");
 
+  // Mando la peticion de añadir tarea al backend
   function handleSubmit(e) {
       e.preventDefault()
 
